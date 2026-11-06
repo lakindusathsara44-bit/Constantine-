@@ -12,7 +12,7 @@
 .saints-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.25rem;margin:2rem 0 4rem}
 .saint-card{overflow:hidden;border:1px solid rgba(190,196,210,.22);border-radius:16px;background:linear-gradient(155deg,rgba(26,31,43,.92),rgba(9,11,17,.97));box-shadow:0 12px 35px rgba(0,0,0,.22);transition:transform .25s,border-color .25s}
 .saint-card:hover{transform:translateY(-5px);border-color:rgba(202,174,111,.6)}
-.saint-image{height:230px;background:#151923;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.saint-image{height:230px;background:#151923;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}\n.saint-image img{display:block}\n.saint-image .fallback{display:none}\n.saint-image.image-failed .fallback{display:block}\n.saint-art-source{position:absolute;right:9px;bottom:9px;padding:5px 8px;border:1px solid rgba(255,255,255,.28);border-radius:6px;background:rgba(5,7,11,.78);color:#ead7a9;font-size:.68rem;text-decoration:none;z-index:2}\n.saint-art-source:hover{background:#302718;color:#fff}
 .saint-image img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .saint-image .fallback{font-family:Georgia,serif;font-size:4rem;color:#b8bdc8}
 .saint-body{padding:1.15rem}
@@ -31,7 +31,7 @@
 <canvas id="particles" aria-hidden="true"></canvas>
 <header class="site-header"><nav class="nav">
 <a class="brand" href="HomeC.html">CONSTANTINE<span>.</span></a>
-<div class="nav-links"><a href="HomeC.html">Home</a><a href="Ground.html">Ground</a><a href="Saints.html">Saints</a><a href="Miracles.html">Miracles</a><a href="Kings.html">Kings</a><a href="Prophets.html">Prophets</a></div>
+<div class="nav-links"><a href="HomeC.html">Home</a><a href="Saints.html">Saints</a><a href="Miracles.html">Miracles</a><a href="Kings.html">Kings</a><a href="Prophets.html">Prophets</a></div>
 </nav></header>
 <main>
 <section class="hero"><div class="eyebrow">Constantine · Christian knowledge</div><h1>SAINTS</h1><p class="lead">Sixteen witnesses from the time of Jesus</p></section>
@@ -42,7 +42,7 @@
 <p>Dates from the first century are often uncertain. Where Scripture and reliable historical sources do not give a birth or death year, this page says <em>unknown</em> rather than presenting a guess as fact.</p>
 </div>
 <div class="saints-grid">
-<article class="saint-card"><div class="saint-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sassoferrato_-_The_Virgin_in_Prayer_-_Google_Art_Project.jpg" alt="Traditional painting of the Virgin Mary" loading="lazy" onerror="this.style.display='none'"><span class="fallback">M</span></div><div class="saint-body"><span class="saint-number">01 · First</span><h2>St. Mary — The Blessed Virgin</h2><p>Mary was the mother of Jesus. The Gospels remember her faith, humility, courage and presence at key moments in Christ’s life, including the Crucifixion.</p><div class="saint-meta"><p><strong>Feast:</strong> 1 January (Mary, Mother of God); 15 August (Assumption)</p><p><strong>Life:</strong> First century BC–first century AD; exact years unknown.</p><p><strong>Death:</strong> Not historically established. Catholic teaching celebrates her Assumption; traditions differ on the details of her earthly end.</p><p><strong>Why remembered:</strong> Her “yes” to God and her unique role as the mother of Jesus (Luke 1:26–38).</p></div><a class="ground-play" href="Ground.html?id=st-mary-the-blessed-virgin">▶ Play profile</a></div></article>
+<article class="saint-card"><div class="saint-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sassoferrato_-_The_Virgin_in_Prayer_-_Google_Art_Project.jpg" alt="Traditional painting of the Virgin Mary" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.saint-image').classList.remove('image-failed')" onerror="this.style.display='none';this.closest('.saint-image').classList.add('image-failed')"><span class="fallback">M</span></div><div class="saint-body"><span class="saint-number">01 · First</span><h2>St. Mary — The Blessed Virgin</h2><p>Mary was the mother of Jesus. The Gospels remember her faith, humility, courage and presence at key moments in Christ’s life, including the Crucifixion.</p><div class="saint-meta"><p><strong>Feast:</strong> 1 January (Mary, Mother of God); 15 August (Assumption)</p><p><strong>Life:</strong> First century BC–first century AD; exact years unknown.</p><p><strong>Death:</strong> Not historically established. Catholic teaching celebrates her Assumption; traditions differ on the details of her earthly end.</p><p><strong>Why remembered:</strong> Her “yes” to God and her unique role as the mother of Jesus (Luke 1:26–38).</p></div><a class="ground-play" href="Ground.html?id=st-mary-the-blessed-virgin">▶ Play profile</a></div></article>
 <article class="saint-card"><div class="saint-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Joseph_with_the_Child_Jesus.jpg" alt="Traditional image of Saint Joseph with the child Jesus" loading="lazy" onerror="this.style.display='none'"><span class="fallback">J</span></div><div class="saint-body"><span class="saint-number">02 · Second</span><h2>St. Joseph</h2><p>Joseph was the husband of Mary and the earthly guardian of Jesus. A carpenter or craftsman by tradition, he protected and cared for the Holy Family.</p><div class="saint-meta"><p><strong>Feast:</strong> 19 March; St. Joseph the Worker — 1 May</p><p><strong>Life:</strong> First century BC–first century AD; exact years unknown.</p><p><strong>Death:</strong> Unknown; Christian tradition generally holds that he died before Jesus began His public ministry.</p><p><strong>Why remembered:</strong> Faithfulness, humility, obedience and care for the Holy Family (Matthew 1–2).</p></div><a class="ground-play" href="Ground.html?id=st-joseph">▶ Play profile</a></div></article>
 <article class="saint-card"><div class="saint-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Titian_-_Saint_John_the_Baptist.jpg" alt="Painting of Saint John the Baptist" loading="lazy" onerror="this.style.display='none'"><span class="fallback">J</span></div><div class="saint-body"><span class="saint-number">03</span><h2>St. John the Baptist</h2><p>A prophet and preacher who called people to repentance and baptised Jesus in the Jordan River. He prepared the way for Christ.</p><div class="saint-meta"><p><strong>Feast:</strong> 24 June (Nativity); 29 August (Passion)</p><p><strong>Life:</strong> Late first century BC–about AD 28–30 (approximate).</p><p><strong>Death:</strong> About AD 28–30; executed under Herod Antipas.</p><p><strong>Why remembered:</strong> He recognised Jesus as the one who was to come and courageously spoke the truth (Mark 1:1–11; Matthew 14:1–12).</p></div><a class="ground-play" href="Ground.html?id=st-john-the-baptist">▶ Play profile</a></div></article>
 <article class="saint-card"><div class="saint-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Martha_and_Mary.jpg" alt="Traditional depiction of Martha and Mary" loading="lazy" onerror="this.style.display='none'"><span class="fallback">M</span></div><div class="saint-body"><span class="saint-number">04</span><h2>St. Martha of Bethany</h2><p>Martha was the sister of Mary and Lazarus. She welcomed Jesus into her home and made a profound confession of faith before Lazarus was raised.</p><div class="saint-meta"><p><strong>Feast:</strong> 29 July (with Mary and Lazarus)</p><p><strong>Life:</strong> First century AD; exact years unknown.</p><p><strong>Death:</strong> Unknown.</p><p><strong>Why remembered:</strong> Hospitality, practical service and her confession that Jesus is the Messiah (Luke 10:38–42; John 11:1–27).</p></div><a class="ground-play" href="Ground.html?id=st-martha-of-bethany">▶ Play profile</a></div></article>
@@ -65,4 +65,21 @@
 </section></div></main>
 <footer class="footer">CONSTANTINE · FAITH · HISTORY · TRADITION<br><span>Educational resource. Scripture references are from the NRSV.</span></footer>
 <script src="assets/ground-play.js"></script><script src="assets/script.js"></script>
-</body></html>
+
+<script>
+/* Link every artwork to its original Wikimedia Commons file page. */
+document.querySelectorAll('.saint-image img').forEach((img) => {
+  const holder = img.closest('.saint-image');
+  const filePath = img.getAttribute('src').split('/wiki/Special:FilePath/')[1];
+  if (!filePath || !holder) return;
+  const source = document.createElement('a');
+  source.className = 'saint-art-source';
+  source.href = 'https://commons.wikimedia.org/wiki/File:' + filePath;
+  source.target = '_blank';
+  source.rel = 'noopener noreferrer';
+  source.textContent = 'Artwork source ↗';
+  source.setAttribute('aria-label', 'Open original artwork and licence details on Wikimedia Commons');
+  holder.appendChild(source);
+});
+</script>
+\n</body></html>
