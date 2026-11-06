@@ -12,7 +12,12 @@
 .saints-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.25rem;margin:2rem 0 4rem}
 .saint-card{overflow:hidden;border:1px solid rgba(190,196,210,.22);border-radius:16px;background:linear-gradient(155deg,rgba(26,31,43,.92),rgba(9,11,17,.97));box-shadow:0 12px 35px rgba(0,0,0,.22);transition:transform .25s,border-color .25s}
 .saint-card:hover{transform:translateY(-5px);border-color:rgba(202,174,111,.6)}
-.saint-image{height:230px;background:#151923;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}\n.saint-image img{display:block}\n.saint-image .fallback{display:none}\n.saint-image.image-failed .fallback{display:block}\n.saint-art-source{position:absolute;right:9px;bottom:9px;padding:5px 8px;border:1px solid rgba(255,255,255,.28);border-radius:6px;background:rgba(5,7,11,.78);color:#ead7a9;font-size:.68rem;text-decoration:none;z-index:2}\n.saint-art-source:hover{background:#302718;color:#fff}
+.saint-image{height:230px;background:#151923;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.saint-image img{display:block}
+.saint-image .fallback{display:none}
+.saint-image.image-failed .fallback{display:block}
+.saint-art-source{position:absolute;right:9px;bottom:9px;padding:5px 8px;border:1px solid rgba(255,255,255,.28);border-radius:6px;background:rgba(5,7,11,.78);color:#ead7a9;font-size:.68rem;text-decoration:none;z-index:2}
+.saint-art-source:hover{background:#302718;color:#fff}
 .saint-image img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .saint-image .fallback{font-family:Georgia,serif;font-size:4rem;color:#b8bdc8}
 .saint-body{padding:1.15rem}
@@ -40,7 +45,7 @@
 <main>
 <section class="hero"><div class="eyebrow">Constantine · Christian knowledge</div><h1>SAINTS</h1><p class="lead">Saints, the Twelve Apostles and the first witnesses of the Church</p></section>
 <div class="wrap">
-<section class="section reveal">
+<section class="section">
 <div class="saints-intro">
 <p>This collection presents saints and holy people connected with Jesus and the beginnings of Christianity. It includes His family and friends, people who encountered Him, the Twelve Apostles, and other important witnesses of the early Church.</p>
 <p>Dates from the first century are often uncertain. Where Scripture and reliable historical sources do not give a birth or death year, this page says <em>unknown</em> rather than presenting a guess as fact.</p>
@@ -110,6 +115,12 @@
 /* Link every artwork to its original Wikimedia Commons file page. */
 document.querySelectorAll('.saint-image img').forEach((img) => {
   const holder = img.closest('.saint-image');
+  const showFallback = () => {
+    img.style.display = 'none';
+    if (holder) holder.classList.add('image-failed');
+  };
+  img.addEventListener('error', showFallback);
+  if (img.complete && img.naturalWidth === 0) showFallback();
   const filePath = img.getAttribute('src').split('/wiki/Special:FilePath/')[1];
   if (!filePath || !holder) return;
   const source = document.createElement('a');
@@ -122,7 +133,8 @@ document.querySelectorAll('.saint-image img').forEach((img) => {
   holder.appendChild(source);
 });
 </script>
-\n<div class="profile-viewer" id="profileViewer" role="dialog" aria-modal="true" aria-label="Full character profile"><div class="profile-viewer-panel"><button class="profile-viewer-close" type="button" aria-label="Close profile">✕ Close</button><div class="profile-viewer-content" id="profileViewerContent"></div></div></div>
+
+<div class="profile-viewer" id="profileViewer" role="dialog" aria-modal="true" aria-label="Full character profile"><div class="profile-viewer-panel"><button class="profile-viewer-close" type="button" aria-label="Close profile">✕ Close</button><div class="profile-viewer-content" id="profileViewerContent"></div></div></div>
 <script>
 (()=>{const viewer=document.getElementById('profileViewer'),content=document.getElementById('profileViewerContent'),close=viewer.querySelector('.profile-viewer-close');function openProfile(html){content.innerHTML=html;viewer.classList.add('open');document.body.style.overflow='hidden';close.focus()}function closeProfile(){viewer.classList.remove('open');content.innerHTML='';document.body.style.overflow=''}close.addEventListener('click',closeProfile);viewer.addEventListener('click',e=>{if(e.target===viewer)closeProfile()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&viewer.classList.contains('open'))closeProfile()});
   if(document.querySelector('.ruler-card')){document.querySelectorAll('.ruler-card').forEach(card=>{const copy=card.querySelector('.ruler-copy');if(!copy)return;const btn=document.createElement('button');btn.type='button';btn.className='profile-view-button';btn.textContent='View full profile →';btn.addEventListener('click',()=>{const art=card.querySelector('.ruler-art');openProfile((art?art.outerHTML:'')+copy.outerHTML)});copy.appendChild(btn)})}
