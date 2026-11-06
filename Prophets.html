@@ -14,6 +14,12 @@
 .prophet-card:hover{transform:translateY(-5px);border-color:rgba(202,174,111,.6)}
 .prophet-image{height:230px;background:#151923;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .prophet-image img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.artwork-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0 1rem 1rem}
+.artwork-item{min-width:0;border:1px solid rgba(190,196,210,.18);border-radius:10px;overflow:hidden;background:#10131b}
+.artwork-item img{display:block;width:100%;height:145px;object-fit:cover;background:#151923}
+.artwork-item a{display:block;padding:7px 9px;color:#d5bd8b;font-size:.76rem;text-decoration:none}
+.artwork-item a:hover{text-decoration:underline}
+.artwork-label{padding:6px 9px 0;color:#aeb4c0;font-size:.72rem;line-height:1.4}
 .prophet-image .fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:4rem;color:#b8bdc8;background:radial-gradient(circle,rgba(189,163,109,.13),transparent 65%)}
 .prophet-image.image-fallback .fallback{display:flex}
 .prophet-body{padding:1.15rem}
@@ -40,11 +46,15 @@
 <section class="section reveal">
 <div class="prophets-intro">
 <p>Meet three foundational figures in the biblical story: Abraham, Moses and Isaiah. Their lives and messages shaped the faith of Israel and remain important to Jewish and Christian traditions.</p>
-<p>Each profile includes a traditional artistic depiction, a short biography, key themes and passages for further reading. The artwork is devotional or historical interpretation—not a verified portrait of the person.</p>
+<p>Each profile includes a curated gallery of traditional artistic depictions, a short biography, key themes and passages for further reading. The artwork is devotional or historical interpretation—not a verified portrait of the person. Open each artwork source to review its creator and reuse information.</p>
 </div>
 <div class="prophets-grid">
 <article class="prophet-card">
 <div class="prophet-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Abraham_and_the_Three_Angels_-_Rembrandt.jpg" alt="Traditional painting depicting Abraham and the three visitors" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-fallback')"><span class="fallback">A</span></div>
+<div class="artwork-gallery" aria-label="Abraham artwork gallery">
+<div class="artwork-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Victors_or_Rembrandt_Studio_-_Abraham_and_the_3_Angels.jpg" alt="Abraham entertaining the three angels, painting by Jan Victors" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="artwork-label">Jan Victors · Abraham entertaining the three angels</div><a href="https://commons.wikimedia.org/wiki/File:Jan_Victors_or_Rembrandt_Studio_-_Abraham_and_the_3_Angels.jpg" target="_blank" rel="noopener noreferrer">Artwork source &amp; licence ↗</a></div>
+<div class="artwork-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt_Abraham_Serving_the_Three_Angels.jpg" alt="Abraham serving the three angels, Rembrandt" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="artwork-label">Rembrandt · Abraham and the three angels</div><a href="https://commons.wikimedia.org/wiki/File:Rembrandt_Abraham_Serving_the_Three_Angels.jpg" target="_blank" rel="noopener noreferrer">Artwork source &amp; licence ↗</a></div>
+</div>
 <div class="prophet-body"><span class="prophet-number">01 · Patriarch</span><h2>Abraham</h2>
 <p>Abraham is remembered as the patriarch of faith. In Genesis, God calls him to leave his homeland and promises to make his descendants a great nation through whom all families of the earth will be blessed.</p>
 <div class="prophet-meta">
@@ -56,6 +66,10 @@
 </div><a class="ground-play" href="Ground.html?id=abraham">▶ Play profile</a></div></article>
 <article class="prophet-card">
 <div class="prophet-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moses_with_the_Ten_Commandments_by_Rembrandt.jpg" alt="Traditional artistic depiction of Moses holding the tablets of the Law" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-fallback')"><span class="fallback">M</span></div>
+<div class="artwork-gallery" aria-label="Moses artwork gallery">
+<div class="artwork-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt_-_Moses_with_the_Ten_Commandments_-_Google_Art_Project.jpg" alt="Moses with the Ten Commandments, Rembrandt" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="artwork-label">Rembrandt · Moses with the Ten Commandments</div><a href="https://commons.wikimedia.org/wiki/File:Rembrandt_-_Moses_with_the_Ten_Commandments_-_Google_Art_Project.jpg" target="_blank" rel="noopener noreferrer">Artwork source &amp; licence ↗</a></div>
+<div class="artwork-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Philippe_de_Champaigne_-_Moses_with_the_Ten_Commandments_-_WGA04717.jpg" alt="Moses with the Ten Commandments, Philippe de Champaigne" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="artwork-label">Philippe de Champaigne · Moses with the Ten Commandments</div><a href="https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_Moses_with_the_Ten_Commandments_-_WGA04717.jpg" target="_blank" rel="noopener noreferrer">Artwork source &amp; licence ↗</a></div>
+</div>
 <div class="prophet-body"><span class="prophet-number">02 · Prophet and leader</span><h2>Moses</h2>
 <p>Moses led the Israelites out of slavery in Egypt. According to the biblical account, God called him at the burning bush, worked through him in the Exodus, and gave Israel the covenant and the Law at Mount Sinai.</p>
 <div class="prophet-meta">
@@ -67,6 +81,10 @@
 </div><a class="ground-play" href="Ground.html?id=moses">▶ Play profile</a></div></article>
 <article class="prophet-card">
 <div class="prophet-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Isaiah_by_Michelangelo.jpg" alt="Traditional depiction of the prophet Isaiah by Michelangelo" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-fallback')"><span class="fallback">I</span></div>
+<div class="artwork-gallery" aria-label="Isaiah artwork gallery">
+<div class="artwork-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Isaiah-Michelangelo.jpg" alt="Isaiah fresco by Michelangelo in the Sistine Chapel" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="artwork-label">Michelangelo · Isaiah, Sistine Chapel</div><a href="https://commons.wikimedia.org/wiki/File:Isaiah-Michelangelo.jpg" target="_blank" rel="noopener noreferrer">Artwork source &amp; licence ↗</a></div>
+<div class="artwork-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%2C_profeti%2C_Isaiah_01.jpg" alt="Isaiah fresco by Michelangelo" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="artwork-label">Michelangelo · Isaiah fresco detail</div><a href="https://commons.wikimedia.org/wiki/File:Michelangelo,_profeti,_Isaiah_01.jpg" target="_blank" rel="noopener noreferrer">Artwork source &amp; licence ↗</a></div>
+</div>
 <div class="prophet-body"><span class="prophet-number">03 · Major prophet</span><h2>Isaiah</h2>
 <p>Isaiah was a prophet in Judah who spoke during the reigns of several kings. His message called the people back to justice and faithfulness, warned against empty worship, and offered hope of restoration and peace.</p>
 <div class="prophet-meta">
