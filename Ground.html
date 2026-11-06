@@ -67,7 +67,7 @@ let active='All';
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const source=e=>e.category==='Saint'?'Saints.html':e.category==='Prophet'?'Prophets.html':'Miracles.html';
 const initials=e=>e.title.replace(/^St\.\s*/,'').trim().charAt(0).toUpperCase()||'✦';
-const slug=t=>t.normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const slug=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 function card(e){
 const facts=(e.facts||[]).map(x=>'<p>'+esc(x).replace(/^([^:]+:)/,'<strong>$1</strong>')+'</p>').join('');
 const scripture=e.scripture?'<p><strong>'+esc(e.scripture)+'</strong></p>':'';
