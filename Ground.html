@@ -32,6 +32,10 @@
 .ground-empty{display:none;padding:2rem;text-align:center;border:1px dashed rgba(198,203,210,.25);border-radius:10px;color:#aeb4c0}
 .collection-note{padding:1rem 1.1rem;border-left:2px solid #b99b55;background:rgba(255,255,255,.025);color:#aeb4c0;font-size:.88rem}
 @media(max-width:600px){.ground-tools{grid-template-columns:1fr}.ground-count{white-space:normal}.ground-art{height:170px}}
+
+.ground-play{display:inline-flex;margin-top:12px;padding:9px 13px;border:1px solid #b99b55;border-radius:8px;background:#19170f;color:#ead7a9;text-decoration:none;font:700 .74rem Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.ground-profile{margin:0 0 2rem;padding:24px;border:1px solid rgba(202,174,111,.35);border-radius:18px;background:#11131a}
+.ground-profile[hidden]{display:none}.profile-top{display:flex;gap:20px;flex-wrap:wrap}.profile-art{width:min(100%,330px);aspect-ratio:4/3;object-fit:cover;border-radius:12px}.profile-copy{flex:1;min-width:240px}.profile-copy p{color:#d0d2d9;line-height:1.8}.profile-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}.profile-fact{padding:12px;background:#191d25;border:1px solid #343943;border-radius:9px;color:#d0d2d9}.profile-scripture{color:#e0c994}.profile-actions{display:flex;gap:9px;flex-wrap:wrap}.profile-actions button,.profile-actions a{padding:10px 13px;border:1px solid #806b3d;border-radius:8px;background:#211e17;color:#f0dba8;text-decoration:none;cursor:pointer}
 </style></head><body>
 <canvas id="particles" aria-hidden="true"></canvas>
 <header class="site-header"><nav class="nav">
@@ -39,7 +43,7 @@
 <div class="nav-links"><a href="HomeC.html">Home</a><a href="Ground.html">Ground</a><a href="Saints.html">Saints</a><a href="Miracles.html">Miracles</a><a href="Kings.html">Kings</a><a href="Prophets.html">Prophets</a></div>
 </nav></header>
 <main><section class="hero"><div class="eyebrow">Constantine · Explore the library</div><h1>GROUND</h1><p class="lead">A shared ground for every story, witness and sign</p></section>
-<div class="wrap"><section class="section reveal">
+<div class="wrap"><section class="section reveal"><section class="ground-profile" id="groundProfile" hidden><div class="profile-top"><img class="profile-art" id="profileArt" alt=""><div class="profile-copy"><span class="ground-type" id="profileType"></span><h2 id="profileTitle"></h2><p id="profileDesc"></p><div class="profile-facts" id="profileFacts"></div><p class="profile-scripture" id="profileScripture"></p><div class="profile-actions"><button id="profileSpeak">🔊 Read aloud</button><button id="profileStop">■ Stop</button><a href="Ground.html">← Back to Ground</a></div></div></div></section>
 <div class="ground-intro"><p>Explore the people and biblical accounts featured across Constantine in one searchable character library. Every information card brings together artwork, a short introduction and key details from its original collection.</p><p>Search by name or keyword, or filter the cards by collection. Select “Open collection” on a card to read the full article and its references.</p></div>
 <div class="ground-tools"><input id="groundSearch" class="ground-search" type="search" placeholder="Search names, stories or Scripture references…" aria-label="Search the character library"><div class="ground-count" id="groundCount" aria-live="polite"></div></div>
 <div class="filters" role="group" aria-label="Filter cards">
@@ -63,11 +67,12 @@ let active='All';
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const source=e=>e.category==='Saint'?'Saints.html':e.category==='Prophet'?'Prophets.html':'Miracles.html';
 const initials=e=>e.title.replace(/^St\.\s*/,'').trim().charAt(0).toUpperCase()||'✦';
+const slug=t=>t.normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 function card(e){
 const facts=(e.facts||[]).map(x=>'<p>'+esc(x).replace(/^([^:]+:)/,'<strong>$1</strong>')+'</p>').join('');
 const scripture=e.scripture?'<p><strong>'+esc(e.scripture)+'</strong></p>':'';
 const image=e.img?'<img src="'+esc(e.img)+'" alt="Traditional artwork illustrating '+esc(e.title)+'" loading="lazy" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'image-fallback\')">':'';
-return '<article class="ground-card"><div class="ground-art">'+image+'<span class="art-fallback">'+esc(initials(e))+'</span></div><div class="ground-copy"><span class="ground-type">'+esc(e.category)+'</span><h2>'+esc(e.title)+'</h2><p>'+esc(e.desc)+'</p>'+(facts||scripture?'<div class="ground-facts">'+facts+scripture+'</div>':'')+'<a class="ground-source" href="'+source(e)+'">Open collection →</a></div></article>';
+return '<article class="ground-card"><div class="ground-art">'+image+'<span class="art-fallback">'+esc(initials(e))+'</span></div><div class="ground-copy"><span class="ground-type">'+esc(e.category)+'</span><h2>'+esc(e.title)+'</h2><p>'+esc(e.desc)+'</p>'+(facts||scripture?'<div class="ground-facts">'+facts+scripture+'</div>':'')+'<a class="ground-play" href="Ground.html?id='+slug(e.title)+'">▶ Play profile</a><br><a class="ground-source" href="'+source(e)+'">Open collection →</a></div></article>';
 }
 function render(){
 const q=search.value.trim().toLowerCase();
@@ -77,6 +82,22 @@ count.textContent='Showing '+shown.length+' of '+entries.length+' information ca
 empty.style.display=shown.length?'none':'block';
 }
 document.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;document.querySelectorAll('.filter-btn').forEach(x=>x.classList.toggle('active',x===b));render()}));
-search.addEventListener('input',render);render();
+
+search.addEventListener('input',render);
+function stopProfileSpeech(){if('speechSynthesis'in window)speechSynthesis.cancel()}
+function showProfile(){
+ const id=new URLSearchParams(location.search).get('id');if(!id)return;
+ const entry=entries.find(e=>slug(e.title)===id);if(!entry)return;
+ document.querySelector('.ground-intro').hidden=true;document.querySelector('.ground-tools').hidden=true;document.querySelector('.filters').hidden=true;grid.hidden=true;empty.hidden=true;
+ document.getElementById('groundProfile').hidden=false;
+ const art=document.getElementById('profileArt');art.src=entry.img||'';art.alt=entry.title+' artwork';art.hidden=!entry.img;
+ document.getElementById('profileType').textContent=entry.category;document.getElementById('profileTitle').textContent=entry.title;document.getElementById('profileDesc').textContent=entry.desc;
+ const facts=document.getElementById('profileFacts');facts.replaceChildren();(entry.facts||[]).forEach(line=>{const el=document.createElement('div');el.className='profile-fact';el.textContent=line;facts.appendChild(el)});
+ document.getElementById('profileScripture').textContent=entry.scripture||'See the original collection for Scripture references.';
+ document.getElementById('profileSpeak').onclick=()=>{stopProfileSpeech();const u=new SpeechSynthesisUtterance([entry.title,entry.category,entry.desc,...(entry.facts||[]),entry.scripture].filter(Boolean).join('. '));u.lang='en-US';speechSynthesis.speak(u)};
+ document.getElementById('profileStop').onclick=stopProfileSpeech;document.title=entry.title+' | Ground · Constantine';
+ document.querySelector('.hero h1').textContent=entry.title.toUpperCase();document.querySelector('.hero .lead').textContent='Explore this profile, its story and Scripture references';
+}
+render();showProfile();window.addEventListener('beforeunload',stopProfileSpeech);
 })();
 </script></body></html>
