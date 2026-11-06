@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090d">
+  <title>Respected Across Faiths | Constantine</title>
+  <meta name="description" content="A growing educational collection of Catholic and non-Catholic historical figures remembered for respect toward Christianity and Christian communities.">
+  <style>
+    :root{color-scheme:dark;--bg:#08090d;--panel:#11151d;--panel2:#151b25;--silver:#c6cbd2;--muted:#9da7b5;--gold:#b99b55;--line:#29313d;--blue:#17243a}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(ellipse at 50% -15%,#1b2940 0,transparent 48%),var(--bg);color:var(--silver);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+    a{color:#d9c18a;text-decoration:none}a:hover{text-decoration:underline}
+    .wrap{width:min(1120px,92%);margin:auto}
+    header{padding:52px 0 30px;text-align:center;border-bottom:1px solid var(--line)}
+    .eyebrow{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font:600 .72rem Arial,sans-serif}
+    h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.1;margin:12px 0;color:#eef0f3;font-weight:500}
+    .intro{max-width:760px;margin:15px auto 0;color:var(--muted);font:1rem/1.8 Arial,sans-serif}
+    .note{margin:26px auto 0;padding:12px 16px;max-width:850px;border-left:2px solid var(--gold);background:#11151dcc;text-align:left;color:#c2c8d1;font: .9rem/1.7 Arial,sans-serif}
+    .toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:26px 0 10px}
+    .toolbar input{flex:1;min-width:220px;background:#10141b;border:1px solid var(--line);border-radius:8px;padding:12px 14px;color:#f2f3f5;font:1rem Arial,sans-serif;outline:none}
+    .toolbar input:focus{border-color:var(--gold)}
+    .count{font: .82rem Arial,sans-serif;color:var(--muted)}
+    .section-title{margin:30px 0 15px;color:var(--gold);font:600 .78rem Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:18px;padding-bottom:54px}
+    .person{display:grid;grid-template-columns:145px 1fr;gap:18px;background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:13px;padding:17px;min-width:0;transition:transform .25s,border-color .25s,box-shadow .25s}
+    .person:hover{transform:translateY(-3px);border-color:#8c774b;box-shadow:0 12px 35px #0006}
+    .portrait{width:145px;height:190px;object-fit:cover;border-radius:8px;background:#202733;border:1px solid #303a49}
+    .portrait-fallback{display:none;width:145px;height:190px;border-radius:8px;background:linear-gradient(145deg,#263246,#111722);border:1px solid #39475b;align-items:center;justify-content:center;color:#d5c08f;font-size:2.5rem}
+    .person h3{margin:0 0 5px;color:#f0f1f3;font-size:1.38rem;line-height:1.25;font-weight:500}
+    .kind{display:inline-block;color:#d8c28e;font:600 .68rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+    .meta{color:#aab3bf;font: .8rem/1.55 Arial,sans-serif;margin:0 0 10px}
+    .person p{margin:8px 0;font-size:.96rem}
+    .person strong{color:#e0e3e8}
+    .sources{margin-top:12px;font: .78rem Arial,sans-serif;color:#9da7b5}
+    footer{border-top:1px solid var(--line);padding:22px 0 38px;text-align:center;color:#828d9c;font: .78rem/1.7 Arial,sans-serif}
+    .empty{display:none;padding:25px;text-align:center;color:var(--muted);font-family:Arial,sans-serif}
+    @media(max-width:560px){header{padding-top:38px}.person{grid-template-columns:105px 1fr;gap:13px;padding:12px}.portrait,.portrait-fallback{width:105px;height:145px}.person h3{font-size:1.15rem}.person p{font-size:.9rem}.meta{font-size:.74rem}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">A Historical &amp; Educational Collection</div>
+      <h1>Respected Across Faiths</h1>
+      <p class="intro">Catholic and non-Catholic people from different periods of history who showed respect, protection, friendship, or notable support toward Christianity and Christian communities.</p>
+      <div class="note"><strong>About this collection:</strong> This page honours specific actions and historical contributions; it does not declare every person a Catholic, a Christian, or a saint. Historical accounts can differ, and each profile should be read with its sources and context. This is an expanding project, and more people will be added over time.</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search people, places, or contributions..." aria-label="Search profiles">
+      <span class="count" id="count" aria-live="polite">4 profiles</span>
+    </div>
+
+    <div class="section-title">Featured historical figures</div>
+    <section class="grid" id="people" aria-label="Respected historical figures">
+      <article class="person" data-search="constantine the great roman emperor catholic christian christianity edict milan nicene council byzantine">
+        <div>
+          <img class="portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Constantine_the_Great.jpg" alt="Historical portrait of Constantine the Great" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.style.display='flex'">
+          <div class="portrait-fallback" aria-hidden="true">C</div>
+        </div>
+        <div>
+          <span class="kind">Christianity's Imperial Patron · First Profile</span>
+          <h3>Constantine the Great</h3>
+          <p class="meta">Roman Emperor · c. 272–337 AD · Emperor from 306–337</p>
+          <p><strong>Faith:</strong> Christian; baptised shortly before his death. His personal religious development and the Christianity of his era are subjects of historical study.</p>
+          <p><strong>Contribution:</strong> Alongside Licinius, he supported the 313 agreement commonly called the Edict of Milan, which established religious toleration and enabled Christian communities to worship openly and recover property. He also supported church building and convened the Council of Nicaea in 325.</p>
+          <p><strong>Historical context:</strong> Constantine's reign was a turning point for Christianity in the Roman Empire, although he did not make Christianity the empire's sole official religion during his lifetime.</p>
+          <div class="sources">Sources: <a href="https://www.newadvent.org/cathen/04295c.htm" target="_blank" rel="noopener">Catholic Encyclopedia</a> · <a href="https://churchheritage.org/history/event/edict-milan-313" target="_blank" rel="noopener">Edict of Milan overview</a></div>
+        </div>
+      </article>
+
+      <article class="person" data-search="umar umar ibn al khattab caliph muslim islam jerusalem christians churches covenant">
+        <div>
+          <img class="portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Umar_ibn_al-Khattab.jpg" alt="Traditional artwork associated with Umar ibn al-Khattab" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.style.display='flex'">
+          <div class="portrait-fallback" aria-hidden="true">ع</div>
+        </div>
+        <div>
+          <span class="kind">Non-Catholic · Muslim Caliph</span>
+          <h3>Umar ibn al-Khattab</h3>
+          <p class="meta">Second Rashidun Caliph · c. 584–644 AD · Caliph from 634–644</p>
+          <p><strong>Faith:</strong> Muslim; a major early Islamic leader.</p>
+          <p><strong>Contribution:</strong> Historical traditions associate Umar with assurances of safety for Jerusalem's Christian population after the city's surrender around 637/638. These accounts refer to protection for residents, churches, crosses, and Christian worship, and to a commitment against forced conversion.</p>
+          <p><strong>Historical context:</strong> The exact wording, date, and later development of documents attributed to Umar are debated by historians. His rule should therefore be understood through both the protective traditions and the wider legal and political realities of early Islamic rule.</p>
+          <div class="sources">Sources: <a href="https://en.jerusalem-patriarchate.info/the-holy-land/palestine-under-arab-rule/" target="_blank" rel="noopener">Jerusalem Patriarchate</a> · <a href="https://journals.iiu.edu.pk/index.php/islamicstudies/article/view/3433" target="_blank" rel="noopener">Academic study of treaties attributed to Umar</a></div>
+        </div>
+      </article>
+
+      <article class="person" data-search="salahuddin ayyubi saladin muslim sultan ayyubid jerusalem holy sepulchre christians">
+        <div>
+          <img class="portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Saladin.jpg" alt="Traditional historical depiction of Salahuddin Ayyubi" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.style.display='flex'">
+          <div class="portrait-fallback" aria-hidden="true">S</div>
+        </div>
+        <div>
+          <span class="kind">Non-Catholic · Muslim Sultan</span>
+          <h3>Salahuddin Ayyubi (Saladin)</h3>
+          <p class="meta">Ayyubid Sultan · 1137/1138–1193 · Sultan from 1174</p>
+          <p><strong>Faith:</strong> Muslim; founder of the Ayyubid dynasty.</p>
+          <p><strong>Contribution:</strong> After taking Jerusalem in 1187, Salahuddin negotiated terms that allowed many of the city's Christian inhabitants to leave through ransom arrangements. He also decided not to destroy the Church of the Holy Sepulchre, preserving an important Christian pilgrimage site.</p>
+          <p><strong>Historical context:</strong> The conquest followed a major military campaign and involved warfare, ransom, and displacement. His treatment of Jerusalem's people should be described from multiple contemporary accounts rather than reduced to a legend of perfect tolerance.</p>
+          <div class="sources">Sources: <a href="https://www.cambridge.org/core/journals/review-of-middle-east-studies/article/too-big-to-be-owned-reflections-on-jerusalem-in-islamic-history/4F1E56BF8F7081B74B274910DE983C1D" target="_blank" rel="noopener">Cambridge University Press</a> · <a href="https://sourcebooks.fordham.edu/med/salahdin.asp" target="_blank" rel="noopener">Fordham Medieval Sourcebook</a></div>
+        </div>
+      </article>
+
+      <article class="person" data-search="waraqa ibn nawfal waraqah christian arab khadija cousin muhammad first revelation gospel">
+        <div>
+          <img class="portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Waraqa_ibn_Nawfal.jpg" alt="Illustrative image associated with Waraqah ibn Nawfal" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.style.display='flex'">
+          <div class="portrait-fallback" aria-hidden="true">W</div>
+        </div>
+        <div>
+          <span class="kind">Non-Catholic · Arab Christian</span>
+          <h3>Waraqah ibn Nawfal</h3>
+          <p class="meta">Meccan Christian scholar · Late 6th–early 7th century · Exact dates uncertain</p>
+          <p><strong>Faith:</strong> Christian, according to early Islamic biographical traditions.</p>
+          <p><strong>Contribution:</strong> Islamic accounts describe Waraqah as a learned Christian familiar with the Torah and Gospel. After Muhammad's first reported revelation, Khadija brought Muhammad to consult Waraqah; the tradition says Waraqah recognised the experience as a prophetic revelation and offered words of support.</p>
+          <p><strong>Important clarification:</strong> Waraqah is identified in the sources as Khadija's paternal cousin, not Muhammad's direct cousin. The surviving accounts do not provide a secure, independently verified biography or exact dates for his life.</p>
+          <div class="sources">Sources: <a href="https://cris.huji.ac.il/en/publications/the-monotheistic-cousins-of-muhammads-wife-khad%C4%ABja/" target="_blank" rel="noopener">Hebrew University of Jerusalem research</a> · <a href="https://www.islamstory.com/index.php/en/artical/25689" target="_blank" rel="noopener">Early Islamic biographical tradition</a></div>
+        </div>
+      </article>
+    </section>
+    <p class="empty" id="empty">No matching profiles found.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">An expanding educational collection · Respectful historical study across religious traditions<br>Constantine Project</div>
+  </footer>
+
+  <script>
+    (() => {
+      const search = document.getElementById('search');
+      const cards = [...document.querySelectorAll('.person')];
+      const count = document.getElementById('count');
+      const empty = document.getElementById('empty');
+      function filter() {
+        const q = search.value.trim().toLowerCase();
+        let shown = 0;
+        cards.forEach(card => {
+          const match = (card.innerText + ' ' + (card.dataset.search || '')).toLowerCase().includes(q);
+          card.hidden = !match;
+          if (match) shown++;
+        });
+        count.textContent = shown + (shown === 1 ? ' profile' : ' profiles');
+        empty.style.display = shown ? 'none' : 'block';
+      }
+      search.addEventListener('input', filter);
+      filter();
+    })();
+  </script>
+</body>
+</html>
