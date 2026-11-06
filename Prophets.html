@@ -48,7 +48,7 @@
 <main>
 <section class="hero"><div class="eyebrow">Constantine · Christian knowledge</div><h1>PROPHETS</h1><p class="lead">Voices of faith, covenant and God's message</p></section>
 <div class="wrap">
-<section class="section reveal">
+<section class="section">
 <div class="prophets-intro">
 <p>Begin with four central figures in the biblical story: Abraham, Moses, Elijah and Isaiah. Abraham is the patriarch of the covenant; Moses is the great prophet and lawgiver; Elijah is remembered for his courage and the events on Mount Carmel; and Isaiah proclaimed God's holiness, justice and hope. Their lives and messages shaped the faith of Israel and remain important to Jewish and Christian traditions.</p>
 <p>Each profile includes a short life story and key Scripture passages. The four featured biographies appear first, followed by the wider directory of biblical prophets, prophetesses and prophetic witnesses. The artwork is devotional or historical interpretation—not a verified portrait of the person. Open each artwork source to review its creator and reuse information.</p>
@@ -95,4 +95,4 @@ grid.innerHTML=prophets.map((p,i)=>'<article class="prophet-card'+(i<4?' prophet
 
   document.querySelectorAll('.prophet-card').forEach(card=>{if(card.querySelector('.profile-view-button'))return;const btn=document.createElement('button');btn.type='button';btn.className='profile-view-button';btn.textContent='View full profile →';btn.addEventListener('click',()=>openProfile(card.outerHTML));card.querySelector('.prophet-body')?.appendChild(btn)});
 })();
-</script></body></html></html>
+</script></body></html>
