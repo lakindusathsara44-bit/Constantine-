@@ -35,6 +35,28 @@
   const style=document.createElement('style');
   style.textContent='.goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.goog-tooltip,.goog-tooltip:hover{display:none!important}body{top:0!important}.skiptranslate{display:none!important}#google_translate_element{display:none!important}';
   document.head.appendChild(style);
+
+  // Preferred Sinhala spelling: "ජේසුස්" instead of "යේසුස්".
+  function correctSinhalaJesusSpelling(){
+    if(read()!=='si' || !document.body) return;
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode(node){
+        const parent=node.parentElement;
+        if(!parent || /^(SCRIPT|STYLE|TEXTAREA|INPUT|NOSCRIPT)$/i.test(parent.tagName)) return NodeFilter.FILTER_REJECT;
+        return node.nodeValue.includes('යේසුස්') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node=>{node.nodeValue=node.nodeValue.replace(/යේසුස්/g,'ජේසුස්');});
+  }
+  if(read()==='si'){
+    document.addEventListener('DOMContentLoaded',correctSinhalaJesusSpelling);
+    const observer=new MutationObserver(correctSinhalaJesusSpelling);
+    const observe=()=>{if(document.body) observer.observe(document.body,{childList:true,subtree:true,characterData:true});};
+    observe();
+    correctSinhalaJesusSpelling();
+  }
   const loader=document.createElement('script');
   loader.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
   loader.async=true;
