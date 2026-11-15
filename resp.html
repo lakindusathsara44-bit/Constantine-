@@ -160,5 +160,5 @@
   if(document.querySelector('.ruler-card')){document.querySelectorAll('.ruler-card').forEach(card=>{const copy=card.querySelector('.ruler-copy');if(!copy)return;const btn=document.createElement('button');btn.type='button';btn.className='profile-view-button';btn.textContent='View full profile →';btn.addEventListener('click',()=>{const art=card.querySelector('.ruler-art');openProfile((art?art.outerHTML:'')+copy.outerHTML)});copy.appendChild(btn)})}
   if(document.querySelector('.person')){document.querySelectorAll('.person').forEach(card=>{const btn=document.createElement('button');btn.type='button';btn.className='profile-view-button';btn.textContent='View full profile →';btn.addEventListener('click',()=>openProfile(card.outerHTML));(card.lastElementChild||card).appendChild(btn)})}
 })();
-</script></body></html>
+</script><div id="google_translate_element" aria-hidden="true"></div><script src="assets/language.js"></script></body></html>
 </html>
