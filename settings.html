@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090d">
+<meta name="description" content="Personalise your Constantine website language settings.">
+<title>Settings | Constantine</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.settings-wrap{max-width:760px;margin:0 auto;padding:55px 22px 90px;position:relative;z-index:1}
+.settings-panel{padding:clamp(22px,5vw,42px);border:1px solid rgba(198,203,210,.2);border-radius:16px;background:linear-gradient(145deg,rgba(22,26,35,.97),rgba(12,14,20,.97));box-shadow:0 22px 65px #0006}
+.settings-panel h1{font-size:clamp(2rem,6vw,3.2rem);letter-spacing:.04em;margin:10px 0}
+.settings-panel p{color:#c5c9d0}
+.settings-label{display:block;margin:28px 0 10px;color:#d8c18c;font:700 .78rem Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.language-select{width:100%;padding:16px 15px;border:1px solid rgba(198,203,210,.35);border-radius:10px;background:#0b1019;color:#f0f1f3;font:1rem Arial,sans-serif;outline:none}
+.language-select:focus{border-color:#b99b55;box-shadow:0 0 0 3px rgba(185,155,85,.15)}
+.settings-hint{font-size:.88rem;color:#9fa6b2!important;margin-top:14px}
+.settings-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.settings-actions a,.settings-actions button{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid #c6cbd2;border-radius:8px;background:#111827;color:#edf0f5;text-decoration:none;font:600 .82rem Arial,sans-serif;cursor:pointer}
+.settings-actions button{border-color:#b99b55;color:#e6d4aa}
+.settings-status{margin-top:14px;color:#d6c18f;font-size:.9rem;min-height:1.5em}
+.settings-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.settings-home{color:#d8c18c;font:600 .8rem Arial,sans-serif}
+</style>
+</head>
+<body>
+<canvas id="particles" aria-hidden="true"></canvas>
+<main class="settings-wrap">
+<section class="settings-panel">
+<div class="settings-top"><span class="eyebrow">CONSTANTINE · PREFERENCES</span><a class="settings-home" href="HomeC.html">← Home</a></div>
+<h1>Settings ⚙️</h1>
+<p>Personalise your Constantine experience. Your language preference will be saved on this device and applied across the website.</p>
+<label class="settings-label" for="site-language">Website language</label>
+<select class="language-select" id="site-language">
+<option value="en">English</option>
+<option value="it">Italiano</option>
+<option value="si">සිංහල (Sinhala)</option>
+<option value="ta">தமிழ் (Tamil)</option>
+<option value="hi">हिन्दी (Hindi)</option>
+<option value="es">Español (Spanish)</option>
+<option value="fr">Français (French)</option>
+<option value="tl">Tagalog</option>
+<option value="nl">Nederlands (Dutch)</option>
+<option value="pt">Português (Portuguese)</option>
+<option value="ar">العربية (Arabic)</option>
+<option value="ru">Русский (Russian)</option>
+</select>
+<p class="settings-hint">Choose a language to translate page text, navigation, headings, and content throughout Constantine. Translation is provided by Google Translate and requires an internet connection.</p>
+<div class="settings-actions"><button type="button" id="apply-language">Apply language</button><a href="HomeC.html">Return to Home</a></div>
+<p class="settings-status" id="settings-status" aria-live="polite"></p>
+</section>
+</main>
+<div id="google_translate_element" aria-hidden="true"></div>
+<script src="assets/script.js"></script>
+<script src="assets/language.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ const select=document.getElementById('site-language');
+ const apply=document.getElementById('apply-language');
+ const status=document.getElementById('settings-status');
+ select.value=window.ConstantineLanguage?window.ConstantineLanguage.get():'en';
+ apply.addEventListener('click',function(){
+   const chosen=select.value;
+   if(window.ConstantineLanguage){status.textContent='Applying your language preference…';window.ConstantineLanguage.set(chosen);}
+ });
+});
+</script>
+</body>
+</html>
