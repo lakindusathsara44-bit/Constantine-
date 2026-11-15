@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08090d">
+  <meta name="description" content="Share a prayer intention with the world. Read prayer requests and join others in prayer on the Constantine Global Prayer Wall.">
+  <title>Global Prayer Wall | Constantine</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/prayer-wall.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="HomeC.html">CONSTANTINE<span> ✦</span></a>
+      <div class="nav-links">
+        <a href="HomeC.html">Home</a>
+        <a href="Jesus.html">Jesus Christ</a>
+        <a href="Miracles.html">Miracles</a>
+        <a href="catholicsaints.html">Saints</a>
+        <a href="Quotes.html">Bible Quotes</a>
+        <a href="PrayerWall.html" aria-current="page">Prayer Wall</a>
+        <a class="settings-nav" href="settings.html" aria-label="Settings" title="Settings">⚙️ Settings</a>
+      </div>
+    </nav>
+  </header>
+
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <main class="prayer-page">
+    <section class="prayer-intro">
+      <div class="eyebrow">One world · One community in prayer</div>
+      <h1>Global Prayer Wall</h1>
+      <p>Whatever is on your heart, you may share it here. People around the world can read your intention and join you in prayer.</p>
+      <div class="verse">“For where two or three are gathered in my name, I am there among them.”<small>MATTHEW 18:20 · NRSV</small></div>
+    </section>
+
+    <div class="prayer-shell">
+      <section class="prayer-panel prayer-form-panel" aria-labelledby="share-prayer-title">
+        <h2 id="share-prayer-title">Share a prayer request</h2>
+        <p class="prayer-subtitle">Your name and country are optional. You can post anonymously.</p>
+
+        <form class="prayer-form" id="prayer-form">
+          <div class="prayer-honeypot" aria-hidden="true">
+            <label for="prayer-website">Leave this field empty</label>
+            <input id="prayer-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label for="prayer-name">Name (optional)</label>
+          <input id="prayer-name" name="display_name" type="text" maxlength="60" placeholder="Anonymous">
+
+          <label for="prayer-country">Country (optional)</label>
+          <input id="prayer-country" name="country" type="text" maxlength="60" placeholder="e.g. Sri Lanka">
+
+          <label for="prayer-category">Prayer category</label>
+          <select id="prayer-category" name="category">
+            <option value="General">General prayer</option>
+            <option value="Healing">Healing & strength</option>
+            <option value="Family">Family & relationships</option>
+            <option value="Guidance">Guidance & decisions</option>
+            <option value="Peace">Peace & comfort</option>
+            <option value="Thanksgiving">Thanksgiving</option>
+            <option value="Other">Other intention</option>
+          </select>
+
+          <label for="prayer-text">Your prayer request</label>
+          <textarea id="prayer-text" name="prayer_text" minlength="10" maxlength="1200" required placeholder="Write what you would like others to pray for…"></textarea>
+          <div class="prayer-count"><span>Share only what you feel comfortable making public.</span><span id="prayer-char-count">0 / 1,200</span></div>
+
+          <button class="prayer-submit" id="prayer-submit" type="submit">Share prayer request</button>
+          <div class="prayer-success" id="prayer-status" role="status" aria-live="polite"></div>
+        </form>
+
+        <p class="prayer-privacy">Prayer requests are public and visible to everyone. Please do not include private contact details, home addresses, passwords, or information that could put someone at risk.</p>
+      </section>
+
+      <section class="prayer-panel prayer-feed-panel" aria-labelledby="prayer-feed-title">
+        <h2 id="prayer-feed-title">Pray for someone</h2>
+        <p class="prayer-subtitle">Every intention matters. Read a request and tap “I prayed” to show your support.</p>
+
+        <div class="prayer-toolbar">
+          <input id="prayer-search" type="search" placeholder="Search prayer requests…" aria-label="Search prayer requests">
+          <select id="prayer-filter" aria-label="Filter by category">
+            <option value="">All categories</option>
+            <option value="General">General prayer</option>
+            <option value="Healing">Healing & strength</option>
+            <option value="Family">Family & relationships</option>
+            <option value="Guidance">Guidance & decisions</option>
+            <option value="Peace">Peace & comfort</option>
+            <option value="Thanksgiving">Thanksgiving</option>
+            <option value="Other">Other intention</option>
+          </select>
+          <button class="prayer-refresh" id="prayer-refresh" type="button">↻ Refresh</button>
+        </div>
+
+        <div class="prayer-list" id="prayer-list" aria-live="polite">
+          <div class="prayer-loading">Loading prayer requests…</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="prayer-guidance">A small act of prayer can bring comfort to someone you may never meet. Please respond to every request with kindness and respect.</div>
+  </main>
+
+  <footer class="footer">CONSTANTINE · GLOBAL PRAYER WALL<br><span>“Pray for one another.” · James 5:16</span></footer>
+  <script src="assets/script.js"></script>
+  <script src="assets/prayer-wall.js"></script>
+  <div id="google_translate_element" aria-hidden="true"></div>
+  <script src="assets/language.js"></script>
+</body>
+</html>
