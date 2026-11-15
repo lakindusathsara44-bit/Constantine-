@@ -41,10 +41,10 @@ function translate(){
  // Translate full text blocks whose markup contains inline emphasis.
  document.querySelectorAll('p,h1,h2,h3,.eyebrow,.lead,.caption,.footer,.note,.icon-credit,.jesus-note,.settings-hint,.settings-label,.settings-status').forEach(el=>{
   const key=norm(el.textContent);
-  if(T[key] && el.children.length===0)el.textContent=T[key];
+  if(T[key] && !el.querySelector('a'))el.textContent=T[key];
  });
  // Keep all Jesus references consistently spelled in Sinhala.
- document.body.innerHTML=document.body.innerHTML.replace(/යේසුස්/g,'ජේසුස්');
+ // Apply the preferred spelling to text nodes without rebuilding the page DOM.\n const spellingWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);\n const spellingNodes=[];while(spellingWalker.nextNode())spellingNodes.push(spellingWalker.currentNode);\n spellingNodes.forEach(n=>{n.nodeValue=n.nodeValue.replace(/යේසුස්/g,'ජේසුස්');});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',translate,{once:true});else translate();
 const observer=new MutationObserver(()=>translate());
