@@ -179,13 +179,18 @@ document.querySelectorAll('.saint-image img').forEach((img) => {
   const cards = Array.from(document.querySelectorAll('.saint-card'));
   const grids = Array.from(document.querySelectorAll('.saints-grid'));
   const total = cards.length;
+  const searchText = new Map(cards.map(card => {
+    const content = card.cloneNode(true);
+    content.querySelectorAll('.profile-view-button, .saint-art-source').forEach(control => control.remove());
+    return [card, content.textContent.toLocaleLowerCase()];
+  }));
 
   const updateResults = () => {
     const query = search.value.trim().toLocaleLowerCase();
     let visible = 0;
 
     cards.forEach(card => {
-      const matches = !query || card.textContent.toLocaleLowerCase().includes(query);
+      const matches = !query || searchText.get(card).includes(query);
       card.hidden = !matches;
       if (matches) visible += 1;
     });
