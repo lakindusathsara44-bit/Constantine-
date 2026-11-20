@@ -277,3 +277,9 @@ body.collection-page .home-back{display:none!important}
 @media(prefers-reduced-motion:reduce) {
   .collection-kings .ruler-card, .collection-kings .profile-viewer.open .profile-viewer-panel { animation:none!important; }
 }
+
+
+/* Kings cards show a concise teaser; the full profile viewer restores every detail. */
+.collection-kings .ruler-card:not(.profile-viewer-content .ruler-card) .ruler-facts { display:none; }
+.collection-kings .profile-viewer-content .ruler-facts { display:block; }
+.collection-kings .ruler-summary { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; min-height:0; }
