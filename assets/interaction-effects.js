@@ -67,6 +67,8 @@
       if (node.matches(revealSelector)) candidates.push(node);
       node.querySelectorAll(revealSelector).forEach(item => candidates.push(item));
       candidates.forEach(item => {
+        /* Kings contains one exceptionally tall directory section. Hiding that parent until 8% of its full height enters the viewport can keep every ruler invisible forever. Its cards animate independently. */
+        if (item.matches('body.collection-kings main .section')) return;
         if (item.classList.contains('ui-reveal')) return;
         item.classList.add('ui-reveal');
         item.style.setProperty('--ui-reveal-delay', ((sequence++ % 5) * 48) + 'ms');

@@ -283,3 +283,13 @@ body.collection-page .home-back{display:none!important}
 .collection-kings .ruler-card:not(.profile-viewer-content .ruler-card) .ruler-facts { display:none; }
 .collection-kings .profile-viewer-content .ruler-facts { display:block; }
 .collection-kings .ruler-summary { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; min-height:0; }
+
+
+/* Safety net: never let the global scroll-reveal hide the Kings directory parent. */
+body.collection-kings main .section.ui-reveal,
+body.collection-kings main .section.ui-reveal.ui-reveal-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
