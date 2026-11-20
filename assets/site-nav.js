@@ -1,4 +1,4 @@
-/* Shared navigation for every Constantine page. */
+/* Shared, accessible navigation for every Constantine page. */
 (() => {
   'use strict';
 
@@ -42,19 +42,14 @@
   const toggle = document.createElement('button');
   toggle.className = 'nav-toggle';
   toggle.type = 'button';
-  toggle.textContent = '☰ Menu';
+  toggle.textContent = 'Menu';
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-controls', 'constantine-nav-links');
+  toggle.setAttribute('aria-label', 'Toggle navigation menu');
 
   const links = document.createElement('div');
   links.className = 'nav-links';
   links.id = 'constantine-nav-links';
-
-  toggle.addEventListener('click', () => {
-    const expanded = links.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(expanded));
-    toggle.textContent = expanded ? '✕ Close' : '☰ Menu';
-  });
 
   pages.forEach(([label, href, className]) => {
     const link = document.createElement('a');
@@ -64,6 +59,37 @@
     if (href.toLowerCase() === currentPage) link.setAttribute('aria-current', 'page');
     links.append(link);
   });
+
+  const closeMenu = () => {
+    links.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = 'Menu';
+  };
+
+  toggle.addEventListener('click', () => {
+    const expanded = !links.classList.contains('is-open');
+    links.classList.toggle('is-open', expanded);
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? 'Close' : 'Menu';
+  });
+
+  links.addEventListener('click', event => {
+    if (event.target instanceof Element && event.target.closest('a')) closeMenu();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  const desktopQuery = window.matchMedia('(min-width: 901px)');
+  const handleDesktopChange = event => {
+    if (event.matches) closeMenu();
+  };
+  if (desktopQuery.addEventListener) {
+    desktopQuery.addEventListener('change', handleDesktopChange);
+  } else if (desktopQuery.addListener) {
+    desktopQuery.addListener(handleDesktopChange);
+  }
 
   nav.append(brand, toggle, links);
   header.replaceChildren(nav);
