@@ -1,0 +1,123 @@
+/* Apokolips-inspired visual system for the remaining Constantine collections. */
+body.collection-page { --collection-panel:rgba(12,16,24,.88); --collection-line:rgba(150,184,226,.16); --collection-text:#eef3fa; --collection-muted:#a7b2c2; color:var(--collection-text); background:#050609; font-family:Manrope,Arial,sans-serif; }
+body.collection-page main { position:relative; z-index:2; }
+body.collection-page .hero { width:min(100%,1160px); max-width:1160px; margin:0 auto; padding:clamp(58px,8vw,104px) 28px 42px; text-align:left; }
+body.collection-page .hero:before { content:""; display:block; width:54px; height:2px; margin:0 0 20px; background:linear-gradient(90deg,#70a9ff,#8bd8ed); box-shadow:0 0 18px rgba(112,169,255,.45); }
+body.collection-page .eyebrow { color:#8ea2bf; font:500 10px "DM Mono",monospace; letter-spacing:1.7px; }
+body.collection-page h1 { color:#f2f5fa; font:800 clamp(38px,6vw,68px)/1.08 Manrope,Arial,sans-serif; letter-spacing:-.055em; margin:12px 0 14px; }
+body.collection-page h1 em { color:#91c7ff; }
+body.collection-page .lead { margin:0; max-width:780px; color:#aab6c7; font:500 clamp(15px,2vw,19px)/1.8 Manrope,Arial,sans-serif; }
+body.collection-page .wrap { width:min(100%,1160px); max-width:1160px; padding:0 28px 72px; }
+body.collection-page .section,body.collection-page .miracles-intro,body.collection-page .prayer-panel,body.collection-page .kings-note,body.collection-page .kings-sources,body.collection-page .prophet-note,body.collection-page .prophet-sources { border:1px solid var(--collection-line); border-radius:16px; background:linear-gradient(145deg,rgba(18,24,35,.92),rgba(8,11,17,.96)); box-shadow:0 20px 56px rgba(0,0,0,.24); }
+body.collection-page .section h2,body.collection-page h2,body.collection-page h3 { color:#e9f1fc; font-family:Manrope,Arial,sans-serif; letter-spacing:-.025em; }
+body.collection-page .section h2:after { background:linear-gradient(90deg,#70a9ff,#8bd8ed); }
+body.collection-page p,body.collection-page li { color:#bac5d4; line-height:1.82; }
+body.collection-page a { color:#91c7ff; transition:color .2s ease,text-shadow .2s ease; }
+body.collection-page a:hover { color:#c3edff; text-shadow:0 0 16px rgba(139,216,237,.22); }
+body.collection-page .button,body.collection-page .profile-view-button,body.collection-page .read-nrsv,body.collection-page .carlo-portal { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 16px; border:1px solid rgba(117,173,255,.38); border-radius:9px; background:linear-gradient(135deg,rgba(44,76,123,.34),rgba(13,26,45,.84)); color:#d9eaff; font:700 .76rem Manrope,Arial,sans-serif; letter-spacing:.035em; text-decoration:none; transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease; }
+body.collection-page .button:hover,body.collection-page .profile-view-button:hover,body.collection-page .read-nrsv:hover,body.collection-page .carlo-portal:hover { transform:translateY(-2px); border-color:rgba(139,216,237,.72); box-shadow:0 9px 28px rgba(47,122,190,.17); }
+body.collection-page input,body.collection-page select,body.collection-page textarea { color:#edf4ff; background:rgba(5,9,16,.9); border:1px solid rgba(140,174,218,.23); border-radius:10px; font:500 .92rem Manrope,Arial,sans-serif; }
+body.collection-page input:focus,body.collection-page select:focus,body.collection-page textarea:focus { border-color:rgba(117,173,255,.75); outline:0; box-shadow:0 0 0 3px rgba(117,173,255,.13); }
+body.collection-page input::placeholder,body.collection-page textarea::placeholder { color:#74839a; }
+body.collection-page .footer { border-top:1px solid rgba(150,184,226,.14); color:#8795a8; font:500 .72rem "DM Mono",monospace; letter-spacing:.08em; line-height:1.8; }
+body.collection-page .about-us-link { display:inline-flex; align-items:center; margin:12px 8px 0; padding:7px 12px; border:1px solid rgba(117,173,255,.28); border-radius:999px; color:#a9d5ff; font:600 .72rem Manrope,Arial,sans-serif; letter-spacing:.03em; }
+body.collection-page .about-us-link:hover { background:rgba(117,173,255,.1); }
+body.collection-page .home-back { display:inline-flex; align-items:center; margin:16px 28px 0; padding:9px 14px; border:1px solid rgba(117,173,255,.24); border-radius:9px; color:#a9d5ff; font:600 .75rem Manrope,Arial,sans-serif; background:rgba(10,18,31,.7); }
+body.collection-page .home-back:hover { transform:translateY(-2px); }
+
+/* Kings and rulers */
+.collection-kings .kings-page { max-width:1160px; }
+.collection-kings .kings-intro { max-width:920px; color:#aebbd0; }
+.collection-kings .kings-tools { align-items:center; }
+.collection-kings .kings-search { min-height:48px; }
+.collection-kings .kings-count { color:#98b3d4; font:500 .72rem "DM Mono",monospace; }
+.collection-kings .kings-section-title { margin:40px 0 16px; padding-bottom:12px; border-bottom:1px solid rgba(140,174,218,.16); color:#e9f1fc; font:700 clamp(1.2rem,2.5vw,1.7rem) Manrope,Arial,sans-serif; }
+.collection-kings .kings-grid { gap:18px; }
+.collection-kings .ruler-card { border:1px solid rgba(140,174,218,.17); border-radius:16px; background:linear-gradient(150deg,rgba(22,31,47,.96),rgba(7,10,16,.98)); box-shadow:0 16px 44px rgba(0,0,0,.26); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.collection-kings .ruler-card:hover { transform:translateY(-5px); border-color:rgba(117,173,255,.55); box-shadow:0 22px 54px rgba(0,0,0,.35),0 0 24px rgba(68,130,205,.1); }
+.collection-kings .ruler-copy { padding:20px; }
+.collection-kings .ruler-copy h3 { color:#eff5ff; }
+.collection-kings .ruler-era { color:#8fb9ee; font:500 .68rem "DM Mono",monospace; }
+.collection-kings .ruler-facts { color:#aebbd0; }
+.collection-kings .ruler-source { color:#91c7ff; }
+
+/* Gospel miracles */
+.collection-miracles .miracles-intro { padding:clamp(22px,4vw,34px); }
+.collection-miracles .note-box { border-left:2px solid #76b5e8; background:rgba(12,22,38,.72); color:#b8c8db; border-radius:0 10px 10px 0; padding:14px 18px; }
+.collection-miracles .miracle-group { margin-top:48px; }
+.collection-miracles .section-heading { max-width:940px; margin-bottom:22px; }
+.collection-miracles .section-heading h2 { font-size:clamp(1.45rem,3vw,2.1rem); }
+.collection-miracles .miracle-grid { gap:18px; align-items:stretch; }
+.collection-miracles .miracle-card { overflow:hidden; border:1px solid rgba(140,174,218,.17); border-radius:16px; background:linear-gradient(150deg,rgba(20,28,42,.96),rgba(7,10,16,.98)); box-shadow:0 16px 44px rgba(0,0,0,.27); transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease; }
+.collection-miracles .miracle-card:hover { transform:translateY(-4px); border-color:rgba(117,173,255,.48); box-shadow:0 20px 48px rgba(0,0,0,.34); }
+.collection-miracles .artwork { background:#080e19; }
+.collection-miracles .artwork img { transition:transform .55s ease,filter .55s ease; }
+.collection-miracles .miracle-card:hover .artwork img { transform:scale(1.035); filter:saturate(1.04); }
+.collection-miracles .art-credit,.collection-miracles .miracle-number { color:#8fb9ee; font:500 .66rem "DM Mono",monospace; }
+.collection-miracles .miracle-copy { padding:20px; }
+.collection-miracles .miracle-copy h3 { font-size:1.15rem; }
+.collection-miracles .scripture { color:#9eacc1; border-top:1px solid rgba(140,174,218,.14); padding-top:13px; }
+.collection-miracles .sources { border:1px solid var(--collection-line); border-radius:14px; padding:24px; background:rgba(11,16,25,.8); }
+
+/* Global Prayer Wall */
+.collection-prayer .prayer-page { max-width:1160px; padding-top:60px; }
+.collection-prayer .prayer-intro { max-width:800px; margin:0 auto 40px; }
+.collection-prayer .prayer-intro h1 { text-align:center; }
+.collection-prayer .prayer-intro .eyebrow { color:#8fb9ee; }
+.collection-prayer .prayer-intro p { color:#aebbd0; }
+.collection-prayer .prayer-page .verse { border-left:2px solid #79bce8; background:linear-gradient(110deg,rgba(20,40,66,.72),rgba(9,14,23,.8)); color:#d9eaff; border-radius:0 12px 12px 0; }
+.collection-prayer .prayer-page .verse small { color:#91c7ff; }
+.collection-prayer .prayer-panel { backdrop-filter:blur(14px); }
+.collection-prayer .prayer-panel h2 { color:#e9f1fc; }
+.collection-prayer .prayer-subtitle { color:#9eacc1; }
+.collection-prayer .prayer-form label { color:#b8c8db; font-family:Manrope,Arial,sans-serif; }
+.collection-prayer .prayer-form input,.collection-prayer .prayer-form select,.collection-prayer .prayer-form textarea,.collection-prayer .prayer-toolbar input,.collection-prayer .prayer-toolbar select { border-radius:10px; }
+.collection-prayer .prayer-submit { border:1px solid rgba(117,173,255,.42); border-radius:10px; color:#e2f0ff; background:linear-gradient(135deg,#18345a,#0b1423); font-family:Manrope,Arial,sans-serif; }
+.collection-prayer .prayer-submit:hover { box-shadow:0 12px 28px rgba(55,126,205,.2); }
+.collection-prayer .prayer-refresh,.collection-prayer .prayed-button { border-color:rgba(117,173,255,.3); border-radius:10px; background:rgba(17,31,50,.72); color:#cfe4ff; font-family:Manrope,Arial,sans-serif; }
+.collection-prayer .prayer-category { color:#a9d5ff; border-color:rgba(117,173,255,.3); }
+.collection-prayer .prayer-card { border:1px solid rgba(140,174,218,.15); border-radius:14px; background:linear-gradient(145deg,rgba(19,28,42,.96),rgba(8,12,19,.98)); }
+.collection-prayer .prayer-card-date { color:#8394aa; }
+
+/* Bible quotes */
+.collection-quotes .quote-grid { gap:18px; }
+.collection-quotes .quote-card { min-height:190px; border:1px solid rgba(140,174,218,.18); border-radius:16px; padding:26px; background:linear-gradient(150deg,rgba(19,28,42,.94),rgba(7,11,18,.98)); box-shadow:0 16px 42px rgba(0,0,0,.22); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.collection-quotes .quote-card:hover { transform:translateY(-5px); border-color:rgba(117,173,255,.5); box-shadow:0 22px 48px rgba(0,0,0,.3),0 0 24px rgba(68,130,205,.1); }
+.collection-quotes .quote-mark { color:#7bb9f3; }
+.collection-quotes .quote-card blockquote { color:#e5edf7; font:500 1.08rem/1.75 Manrope,Arial,sans-serif; }
+.collection-quotes .quote-ref { color:#92b9e9; font:500 .66rem "DM Mono",monospace; }
+.collection-quotes .source-note { color:#8f9cb0; }
+
+/* Respected people */
+.collection-people .intro { color:#aebbd0; }
+.collection-people .note { border-left:2px solid #78b8e9; background:rgba(14,25,42,.68); border-radius:0 10px 10px 0; padding:14px 18px; color:#aebbd0; }
+.collection-people .toolbar { margin:24px 0 18px; }
+.collection-people .count { color:#91b8e8; font:500 .7rem "DM Mono",monospace; }
+.collection-people .grid { gap:18px; }
+.collection-people .person { overflow:hidden; border:1px solid rgba(140,174,218,.17); border-radius:16px; padding:18px; background:linear-gradient(150deg,rgba(20,28,42,.95),rgba(7,10,16,.98)); box-shadow:0 16px 42px rgba(0,0,0,.23); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.collection-people .person:hover { transform:translateY(-4px); border-color:rgba(117,173,255,.48); box-shadow:0 20px 48px rgba(0,0,0,.32); }
+.collection-people .person h3 { color:#edf4ff; }
+.collection-people .portrait { border:1px solid rgba(140,174,218,.22); }
+.collection-people .kind { color:#92c6f1; font:500 .64rem "DM Mono",monospace; }
+.collection-people .meta { color:#899bb3; }
+
+/* Prophets directory */
+.collection-prophets .prophets-intro { color:#acbbcf; }
+.collection-prophets .prophets-feature-art figure { border-color:rgba(140,174,218,.2)!important; background:linear-gradient(150deg,#121d2d,#080d16)!important; box-shadow:0 18px 48px rgba(0,0,0,.25); }
+.collection-prophets .prophets-feature-art figcaption { color:#9eadc1!important; }
+.collection-prophets .prophets-feature-art figcaption a { color:#91c7ff!important; }
+.collection-prophets .prophets-grid { gap:18px; }
+.collection-prophets .prophet-card { overflow:hidden; border:1px solid rgba(140,174,218,.18); border-radius:16px; background:linear-gradient(150deg,rgba(20,28,42,.95),rgba(7,10,16,.98)); box-shadow:0 16px 42px rgba(0,0,0,.24); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.collection-prophets .prophet-card:hover { transform:translateY(-5px); border-color:rgba(117,173,255,.5); box-shadow:0 22px 48px rgba(0,0,0,.32); }
+.collection-prophets .prophet-number,.collection-prophets .prophet-meta { color:#8fb9ee; font:500 .66rem "DM Mono",monospace; }
+.collection-prophets .prophet-body { padding:20px; }
+.collection-prophets .prophet-body h3 { color:#edf4ff; }
+.collection-prophets .prophet-note,.collection-prophets .prophet-sources { padding:22px; margin-top:24px; }
+.collection-prophets .prophet-sources a { color:#91c7ff; }
+
+.collection-page .profile-viewer { background:rgba(2,5,10,.86); backdrop-filter:blur(12px); }
+.collection-page .profile-viewer-panel { border:1px solid rgba(117,173,255,.24); border-radius:18px; background:linear-gradient(145deg,#111b2a,#080d15); box-shadow:0 28px 90px rgba(0,0,0,.6); }
+.collection-page .profile-viewer-close { border:1px solid rgba(117,173,255,.3); border-radius:9px; background:#101d30; color:#d7eaff; }
+@media(max-width:760px) { body.collection-page .hero { padding:58px 18px 34px; } body.collection-page .wrap { padding:0 16px 58px; } .collection-kings .kings-tools { display:grid; grid-template-columns:1fr; } .collection-kings .kings-search { width:100%; min-width:0; } }
+@media(max-width:560px) { .collection-prayer .prayer-page { padding:38px 14px 56px; } .collection-prayer .prayer-toolbar { grid-template-columns:1fr 1fr; } .collection-people .toolbar { display:grid; grid-template-columns:1fr; } .collection-page .profile-viewer-panel { width:calc(100% - 20px); } }
+@media(prefers-reduced-motion:reduce) { .collection-page *, .collection-page *::before, .collection-page *::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
