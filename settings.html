@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08090d">
+<meta name="theme-color" content="#050609">
 <meta name="description" content="Personalise your Constantine website language settings.">
 <title>Settings | Constantine</title>
 <link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/home-apokolips.css?v=1">
+<link rel="stylesheet" href="assets/page-apokolips.css?v=1">
 <style>
 .settings-wrap{max-width:760px;margin:0 auto;padding:55px 22px 90px;position:relative;z-index:1}
 .settings-panel{padding:clamp(22px,5vw,42px);border:1px solid rgba(198,203,210,.2);border-radius:16px;background:linear-gradient(145deg,rgba(22,26,35,.97),rgba(12,14,20,.97));box-shadow:0 22px 65px #0006}
@@ -25,11 +27,11 @@
 </style>
 <script src="assets/site-nav.js?v=3" defer></script>
 </head>
-<body>
+<body class="home-apokolips page-apokolips settings-page">
 <canvas id="particles" aria-hidden="true"></canvas>
 <main class="settings-wrap">
 <section class="settings-panel">
-<div class="settings-top"><span class="eyebrow">CONSTANTINE · PREFERENCES</span><a class="settings-home" href="HomeC.html">← Home</a></div>
+<div class="settings-top"><span class="eyebrow">CONSTANTINE · PREFERENCES</span><span class="settings-index">01 / PERSONALISE</span></div>
 <h1>Settings ⚙️</h1>
 <p>Personalise your Constantine experience. Your language preference will be saved on this device and applied across the website.</p>
 <label class="settings-label" for="site-language">Website language</label>
@@ -48,10 +50,11 @@
 <option value="ru">Русский (Russian)</option>
 </select>
 <p class="settings-hint">Choose a language to translate page text, navigation, headings, and content throughout Constantine. Sinhala uses native translations prepared for this website. Other languages use Google Translate and require an internet connection.</p>
-<div class="settings-actions"><button type="button" id="apply-language">Apply language</button><a href="HomeC.html">Return to Home</a></div>
+<div class="settings-actions"><button type="button" id="apply-language">Apply language <span aria-hidden="true">↗</span></button><a href="HomeC.html">Return to Home</a></div>
 <p class="settings-status" id="settings-status" aria-live="polite"></p>
 </section>
 </main>
+<footer class="footer home-footer page-footer"><div class="footer-brand"><strong>CONSTANTINE<span> ✦</span></strong><small>FAITH · HISTORY · TRADITION</small></div><p>Your preferences are saved on this device.</p><a class="about-us-link" href="https://apokolips.xyz/info.html" target="_blank" rel="noopener noreferrer">About us <span aria-hidden="true">↗</span></a></footer>
 <div id="google_translate_element" aria-hidden="true"></div>
 <script src="assets/script.js"></script>
 <script src="assets/language.js"></script>
