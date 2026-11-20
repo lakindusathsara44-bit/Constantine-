@@ -1,0 +1,75 @@
+/* Shared Apokolips-inspired layout for Constantine content pages. */
+body.page-apokolips {
+  --home-bg:#050609; --home-panel:#0c0f15; --home-line:rgba(255,255,255,.09);
+  --home-text:#f2f4f8; --home-muted:#9299a8; --home-blue:#70a9ff; --home-cyan:#8bd8ed;
+  color:var(--home-text); font-family:Manrope,Arial,sans-serif;
+}
+body.page-apokolips main { position:relative; z-index:2; }
+body.page-apokolips .hero { width:min(100%,1120px); max-width:1120px; margin:0 auto; padding:72px 28px 46px; text-align:left; }
+body.page-apokolips .hero .eyebrow,
+body.page-apokolips .wrap .eyebrow { color:#8e9aaa; font:10px "DM Mono",monospace; letter-spacing:1.5px; }
+body.page-apokolips h1 { color:#f2f4f8; font:800 clamp(38px,6vw,68px)/1.08 Manrope,Arial,sans-serif; letter-spacing:-.055em; }
+body.page-apokolips .lead { max-width:760px; margin:14px 0; color:#aab4c4; font:500 clamp(15px,2vw,19px)/1.8 Manrope,Arial,sans-serif; }
+body.page-apokolips .wrap { width:min(100%,1120px); max-width:1120px; padding:0 28px 64px; }
+body.page-apokolips .section,
+body.page-apokolips .settings-panel {
+  margin:18px 0; padding:clamp(22px,3.5vw,38px); border:1px solid var(--home-line);
+  border-radius:12px; background:linear-gradient(145deg,rgba(16,20,28,.96),rgba(8,10,15,.97));
+  box-shadow:0 18px 55px rgba(0,0,0,.22);
+}
+body.page-apokolips .section h2,
+body.page-apokolips .settings-panel h1 {
+  color:#f0f4fa; font-family:Manrope,Arial,sans-serif; letter-spacing:-.045em;
+}
+body.page-apokolips .section h2 { font-size:clamp(23px,3vw,32px); }
+body.page-apokolips .section h2:after { width:38px; height:2px; background:linear-gradient(90deg,var(--home-blue),var(--home-cyan)); }
+body.page-apokolips .section p,
+body.page-apokolips .section li { color:#a6afbd; font:400 13px/1.95 Manrope,Arial,sans-serif; }
+body.page-apokolips .jesus-hero { text-align:center; padding-top:70px; }
+body.page-apokolips .jesus-hero .lead { margin-inline:auto; }
+body.page-apokolips .jesus-icon { width:min(78vw,390px); border:1px solid rgba(112,169,255,.28); border-radius:12px; box-shadow:0 22px 70px #0008; }
+body.page-apokolips .icon-credit { color:#8793a5; font:11px/1.8 Manrope,Arial,sans-serif; }
+body.page-apokolips .icon-credit a { color:#a9caff; }
+body.page-apokolips .jesus-verse { padding:18px 20px; border:1px solid rgba(112,169,255,.14); border-left:2px solid var(--home-blue); border-radius:0 8px 8px 0; background:rgba(112,169,255,.045); color:#dce8f8; font:italic 15px/1.8 Georgia,serif; }
+body.page-apokolips .jesus-verse small { color:#8eaed9; font:9px "DM Mono",monospace; letter-spacing:1px; }
+body.page-apokolips .jesus-note { color:#8793a5; }
+body.page-apokolips .button,
+body.page-apokolips .settings-actions a,
+body.page-apokolips .settings-actions button {
+  min-height:44px; padding:11px 16px; border:1px solid rgba(112,169,255,.28); border-radius:7px;
+  background:rgba(112,169,255,.07); color:#dceaff; font:700 10px Manrope,Arial,sans-serif;
+  letter-spacing:.06em; transition:transform .2s,border-color .2s,background .2s; cursor:pointer;
+}
+body.page-apokolips .button:hover,
+body.page-apokolips .settings-actions a:hover,
+body.page-apokolips .settings-actions button:hover { transform:translateY(-2px); border-color:var(--home-blue); background:rgba(112,169,255,.14); color:#fff; }
+body.page-apokolips .page-footer { display:flex; align-items:center; justify-content:space-between; gap:18px; text-align:left; padding:28px max(22px,calc((100% - 1064px)/2)); border-top:1px solid var(--home-line); }
+body.page-apokolips .page-footer .footer-brand { display:grid; gap:5px; color:#edf4ff; font:800 12px Manrope,Arial,sans-serif; letter-spacing:2px; }
+body.page-apokolips .page-footer .footer-brand strong span { color:var(--home-blue); }
+body.page-apokolips .page-footer .footer-brand small { color:#718096; font:8px "DM Mono",monospace; }
+body.page-apokolips .page-footer p { margin:0; color:#8793a5; font:11px Manrope,Arial,sans-serif; }
+body.page-apokolips .about-us-link { color:#a9caff; font:700 10px "DM Mono",monospace; }
+body.page-apokolips .about-us-link:hover { color:#fff; }
+body.settings-page .settings-wrap { width:min(100%,900px); max-width:900px; padding:76px 28px 70px; }
+body.settings-page .settings-panel { margin:0; padding:clamp(26px,5vw,48px); }
+body.settings-page .settings-panel h1 { margin:20px 0 12px; font-size:clamp(34px,5vw,54px); }
+body.settings-page .settings-panel > p { color:#a6afbd; font:13px/1.9 Manrope,Arial,sans-serif; }
+body.settings-page .settings-top { padding-bottom:18px; border-bottom:1px solid var(--home-line); }
+body.settings-page .settings-top .eyebrow { color:#8e9aaa; }
+body.settings-page .settings-index { color:#718096; font:9px "DM Mono",monospace; letter-spacing:1px; }
+body.settings-page .settings-label { color:#a9caff; font:10px "DM Mono",monospace; letter-spacing:1px; }
+body.settings-page .language-select { min-height:52px; border:1px solid rgba(112,169,255,.25); border-radius:8px; background:#080c13; color:#edf4ff; font:14px Manrope,Arial,sans-serif; }
+body.settings-page .language-select:focus { border-color:var(--home-blue); box-shadow:0 0 0 3px rgba(112,169,255,.12); }
+body.settings-page .settings-hint { color:#8793a5!important; }
+body.settings-page .settings-status { color:#9ec4ff; font:12px Manrope,Arial,sans-serif; }
+body.settings-page .settings-actions { gap:10px; }
+@media(max-width:650px) {
+ body.page-apokolips .hero { padding:52px 18px 34px; }
+ body.page-apokolips .wrap { padding:0 14px 48px; }
+ body.page-apokolips .page-footer { flex-direction:column; align-items:flex-start; padding:24px 18px; }
+ body.settings-page .settings-wrap { padding:48px 14px; }
+ body.settings-page .settings-top { align-items:flex-start; }
+}
+@media(prefers-reduced-motion:reduce) {
+ body.page-apokolips *, body.page-apokolips *:before, body.page-apokolips *:after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+}
