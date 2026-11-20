@@ -73,3 +73,34 @@ body.settings-page .settings-actions { gap:10px; }
 @media(prefers-reduced-motion:reduce) {
  body.page-apokolips *, body.page-apokolips *:before, body.page-apokolips *:after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
 }
+
+/* Trinity & Angels page refinements */
+body.trinity-page .trinity-hero {
+  padding:clamp(24px,4vw,42px); border:1px solid rgba(112,169,255,.2); border-radius:12px;
+  background:radial-gradient(ellipse at 50% 0%,rgba(70,112,175,.17),rgba(10,13,20,.94) 70%);
+}
+body.trinity-page .trinity-symbol { color:#9fc5ff; text-shadow:0 0 30px rgba(112,169,255,.25); font-size:clamp(3.5rem,8vw,5rem); }
+body.trinity-page .person-grid, body.trinity-page .angel-grid { gap:14px; margin:22px 0; }
+body.trinity-page .person-card, body.trinity-page .angel-card {
+  height:100%; padding:22px; border:1px solid rgba(255,255,255,.09); border-radius:10px;
+  background:linear-gradient(145deg,rgba(18,23,32,.96),rgba(9,12,18,.97));
+  transition:transform .22s,border-color .22s,background .22s;
+}
+body.trinity-page .person-card:hover, body.trinity-page .angel-card:hover {
+  transform:translateY(-3px); border-color:rgba(112,169,255,.35); background:rgba(17,25,38,.98);
+}
+body.trinity-page .person-card h3, body.trinity-page .angel-card h3 { color:#dceaff; font:700 16px/1.4 Manrope,Arial,sans-serif; }
+body.trinity-page .person-card p, body.trinity-page .angel-card p { color:#a6afbd; font:400 12px/1.9 Manrope,Arial,sans-serif; }
+body.trinity-page .theology-note {
+  padding:18px 20px; border:1px solid rgba(112,169,255,.13); border-left:2px solid #70a9ff;
+  border-radius:0 8px 8px 0; background:rgba(112,169,255,.045); color:#aebbd0;
+  font:400 12px/1.9 Manrope,Arial,sans-serif;
+}
+body.trinity-page .verse {
+  padding:20px; border:1px solid rgba(112,169,255,.14); border-left:2px solid #70a9ff;
+  border-radius:0 9px 9px 0; background:rgba(112,169,255,.045); color:#dce8f8;
+  text-align:left; font:italic 15px/1.8 Georgia,serif;
+}
+body.trinity-page .verse small { color:#8eaed9; font:9px "DM Mono",monospace; letter-spacing:1px; }
+body.trinity-page .section ul { padding-left:1.25rem; color:#a6afbd; }
+body.trinity-page .section li { padding:.25rem 0; }
