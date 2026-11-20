@@ -45,8 +45,11 @@
 .profile-viewer{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(7px)}.profile-viewer.open{display:flex}.profile-viewer-panel{position:relative;width:min(900px,100%);max-height:90vh;overflow:auto;padding:clamp(16px,3vw,28px);border:1px solid rgba(198,203,210,.35);border-radius:18px;background:#0d1119;color:#e8ebf0;box-shadow:0 24px 80px #000b}.profile-viewer-close{position:sticky;top:0;float:right;z-index:2;padding:8px 12px;border:1px solid #566171;border-radius:9px;background:#171e29;color:#fff;cursor:pointer;font:600 .85rem Arial,sans-serif}.profile-viewer-content{clear:both;padding-top:8px}.profile-viewer-content h2,.profile-viewer-content h3{color:#f2f4f7}.profile-viewer-content p{line-height:1.75}.profile-viewer-content img{max-width:100%}.profile-viewer-content .ruler-art{height:clamp(190px,34vw,330px);border-radius:12px;overflow:hidden}.profile-viewer-content .portrait{width:145px;height:190px;object-fit:cover}.profile-view-button{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:10px 14px;border:1px solid rgba(198,203,210,.42);border-radius:9px;background:#172131;color:#edf2f7;cursor:pointer;font:600 .82rem Arial,sans-serif;transition:transform .2s,border-color .2s}.profile-view-button:hover{transform:translateY(-2px);border-color:#c6cbd2;background:#202d40}
 @media(max-width:560px){.home-back{top:8px;right:8px;padding:8px 10px;font-size:.75rem}.profile-viewer{padding:8px}.profile-viewer-panel{max-height:94vh;border-radius:13px}}
 </style><script src="assets/site-nav.js?v=3" defer></script>
+<link rel="stylesheet" href="assets/home-apokolips.css?v=1">
+<link rel="stylesheet" href="assets/page-apokolips.css?v=4">
+<link rel="stylesheet" href="assets/universal-apokolips.css?v=1">
 </head>
-<body><a class="home-back" href="HomeC.html" aria-label="Back to Constantine home">← Back to Home</a>
+<body class="home-apokolips page-apokolips people-page"><a class="home-back" href="HomeC.html" aria-label="Back to Constantine home">← Back to Home</a>
   <header>
     <div class="wrap">
       <div class="eyebrow">A Historical &amp; Educational Collection</div>
@@ -133,7 +136,9 @@
 
   <footer>
     <div class="wrap">An expanding educational collection · Respectful historical study across religious traditions<br>Constantine Project</div>
-  </footer>
+  
+<a class="about-us-link" href="https://www.apokolips.xyz/info.html" target="_blank" rel="noopener noreferrer">About us <span aria-hidden="true">↗</span></a>
+</footer>
 
   <script>
     (() => {
@@ -162,5 +167,6 @@
   if(document.querySelector('.ruler-card')){document.querySelectorAll('.ruler-card').forEach(card=>{const copy=card.querySelector('.ruler-copy');if(!copy)return;const btn=document.createElement('button');btn.type='button';btn.className='profile-view-button';btn.textContent='View full profile →';btn.addEventListener('click',()=>{const art=card.querySelector('.ruler-art');openProfile((art?art.outerHTML:'')+copy.outerHTML)});copy.appendChild(btn)})}
   if(document.querySelector('.person')){document.querySelectorAll('.person').forEach(card=>{const btn=document.createElement('button');btn.type='button';btn.className='profile-view-button';btn.textContent='View full profile →';btn.addEventListener('click',()=>openProfile(card.outerHTML));(card.lastElementChild||card).appendChild(btn)})}
 })();
-</script><div id="google_translate_element" aria-hidden="true"></div><script src="assets/language.js"></script></body></html>
+</script><div id="google_translate_element" aria-hidden="true"></div><script src="assets/language.js"></script><script src="assets/interaction-effects.js?v=1" defer></script>
+</body></html>
 </html>
