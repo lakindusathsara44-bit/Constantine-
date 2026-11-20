@@ -1,0 +1,14 @@
+/* Shared interaction feedback used by every Constantine page. */
+:root { --ui-accent:#75adff; --ui-accent-soft:rgba(117,173,255,.2); --ui-cyan:#8bd8ed; }
+.ui-ripple-host { position:relative !important; isolation:isolate; }
+.ui-ripple { position:absolute; z-index:8; width:18px; height:18px; border-radius:50%; pointer-events:none; background:radial-gradient(circle,rgba(139,216,237,.58) 0%,rgba(117,173,255,.28) 42%,rgba(117,173,255,0) 74%); transform:translate(-50%,-50%) scale(0); animation:constantineRipple .62s cubic-bezier(.16,.7,.25,1) forwards; }
+@keyframes constantineRipple { 0%{opacity:.9;transform:translate(-50%,-50%) scale(.2)} 70%{opacity:.42} 100%{opacity:0;transform:translate(-50%,-50%) scale(8)} }
+.ui-is-pressed { filter:brightness(1.12); }
+button.ui-is-pressed,a.ui-is-pressed,[role="button"].ui-is-pressed,.ui-is-pressed.ruler-card,.ui-is-pressed.miracle-card,.ui-is-pressed.quote-card,.ui-is-pressed.person,.ui-is-pressed.prophet-card,.ui-is-pressed.saint-card,.ui-is-pressed.prayer-card { transform:translateY(1px) scale(.985); }
+.ui-clicked { animation:constantineClickFeedback .42s ease-out; }
+@keyframes constantineClickFeedback { 0%{filter:brightness(1)} 35%{filter:brightness(1.22);box-shadow:0 0 0 3px rgba(117,173,255,.16),0 0 24px rgba(117,173,255,.14)} 100%{filter:brightness(1)} }
+body.home-apokolips :is(a,button,input,select,textarea,[role="button"]) { -webkit-tap-highlight-color:transparent; }
+body.home-apokolips :is(button,a,[role="button"],input,select,textarea):focus-visible { outline:2px solid var(--ui-accent); outline-offset:3px; }
+.ui-reveal { opacity:0; transform:translateY(16px); transition:opacity .62s ease,transform .62s cubic-bezier(.2,.7,.2,1); transition-delay:var(--ui-reveal-delay,0ms); }
+.ui-reveal.ui-reveal-visible { opacity:1; transform:none; }
+@media(prefers-reduced-motion:reduce) { .ui-ripple,.ui-clicked,.ui-reveal,.ui-is-pressed { animation:none!important; transition:none!important; transform:none!important; } }
