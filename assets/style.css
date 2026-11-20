@@ -395,3 +395,43 @@ body.constantine-nav-active .carlo-portal {
     font-size: .58rem;
   }
 }
+
+
+/* Keep the full navigation accessible without crowding tablet and phone screens */
+.site-header .nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 16px;
+  border: 1px solid rgba(185, 155, 85, .45);
+  border-radius: 8px;
+  background: rgba(185, 155, 85, .08);
+  color: #e8d4a6;
+  font: 700 .72rem Arial, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.site-header .nav-toggle:hover,
+.site-header .nav-toggle:focus-visible {
+  border-color: var(--gold);
+  background: rgba(185, 155, 85, .16);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .site-header .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-header .nav-links {
+    display: none !important;
+    width: min(100%, 620px);
+  }
+
+  .site-header .nav-links.is-open {
+    display: grid !important;
+  }
+}
