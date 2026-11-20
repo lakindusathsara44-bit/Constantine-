@@ -282,3 +282,52 @@ body.saints-page .page-footer { background:rgba(5,6,9,.55); }
   body.saints-page .saint-card, body.saints-page .saint-image img { transition:none!important; }
 }
 body.saints-page [hidden] { display:none!important; }
+
+/* Full Trinity & Angels page treatment — no legacy gold inline styling. */
+body.trinity-page .trinity-page-hero{width:100%;max-width:none;min-height:0;margin:0;padding:0;text-align:left}
+body.trinity-page .trinity-page-hero>.hero-kicker,body.trinity-page .trinity-page-hero>h1,body.trinity-page .trinity-page-hero>.lead,body.trinity-page .trinity-page-hero>.hero-meta{width:min(100%,1120px);margin-left:auto;margin-right:auto}
+body.trinity-page .trinity-page-hero>.hero-kicker{display:flex;align-items:center;gap:11px;padding:78px 28px 0;color:#8e9aaa;font:10px "DM Mono",monospace;letter-spacing:1.6px}
+body.trinity-page .hero-kicker-line{display:inline-block;width:24px;height:1px;background:linear-gradient(90deg,var(--home-blue),var(--home-cyan))}
+body.trinity-page .trinity-page-hero>h1{padding:12px 28px 0;margin-top:0}
+body.trinity-page .trinity-page-hero>.lead{padding:0 28px;margin-top:13px}
+body.trinity-page .trinity-page-hero>.hero-meta{display:flex;align-items:center;gap:10px;padding:26px 28px 42px;color:#718096;font:9px "DM Mono",monospace;letter-spacing:1.15px}
+body.trinity-page .hero-meta .meta-line{display:inline-block;width:28px;height:1px;background:var(--home-blue)}
+body.trinity-page .wrap{padding-top:0}
+body.trinity-page .section{position:relative;overflow:hidden}
+body.trinity-page .section>.eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:12px;color:#83b5f5;font:9px "DM Mono",monospace;letter-spacing:1.45px;text-transform:uppercase}
+body.trinity-page .section>.eyebrow:before{content:"";display:inline-block;width:16px;height:1px;background:var(--home-blue)}
+body.trinity-page .section>h2{margin:8px 0 15px;font-size:clamp(23px,3vw,32px);line-height:1.28}
+body.trinity-page .section>h2:after{content:"";display:block;margin-top:13px}
+body.trinity-page .section>h3{margin:28px 0 12px;color:#e6eef9;font:700 17px/1.4 Manrope,Arial,sans-serif;letter-spacing:-.025em}
+body.trinity-page .trinity-hero{position:relative;overflow:hidden;margin:0 0 34px;padding:clamp(25px,5vw,48px);text-align:left;border:1px solid rgba(112,169,255,.2);border-radius:12px;background:radial-gradient(ellipse at 80% 0%,rgba(70,112,175,.18),transparent 48%),linear-gradient(145deg,rgba(17,23,33,.98),rgba(7,10,16,.98))}
+body.trinity-page .trinity-hero:after{content:"";position:absolute;right:-55px;bottom:-110px;width:260px;height:260px;border:1px solid rgba(112,169,255,.09);border-radius:50%;box-shadow:0 0 0 24px rgba(112,169,255,.018),0 0 0 48px rgba(112,169,255,.014);pointer-events:none}
+body.trinity-page .trinity-symbol{display:grid;place-items:center;width:68px;height:68px;margin-bottom:22px;border:1px solid rgba(112,169,255,.25);border-radius:10px;background:rgba(112,169,255,.07);color:#a8ccff;text-shadow:0 0 30px rgba(112,169,255,.25);font-size:38px}
+body.trinity-page .trinity-hero .eyebrow{color:#8eacd0;font:9px "DM Mono",monospace;letter-spacing:1.4px}
+body.trinity-page .trinity-hero h2{margin:10px 0 13px;color:#f0f5fc;font:800 clamp(25px,3.8vw,38px)/1.2 Manrope,Arial,sans-serif;letter-spacing:-.045em}
+body.trinity-page .trinity-hero p{max-width:760px;margin:0;color:#aebbd0;font:400 13px/1.95 Manrope,Arial,sans-serif}
+body.trinity-page .person-grid,body.trinity-page .angel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));align-items:stretch;gap:14px;margin:23px 0 27px}
+body.trinity-page .person-card,body.trinity-page .angel-card{position:relative;height:100%;min-width:0;padding:23px;border:1px solid rgba(255,255,255,.085);border-radius:10px;background:linear-gradient(145deg,rgba(18,23,32,.96),rgba(9,12,18,.98));transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+body.trinity-page .person-card:before,body.trinity-page .angel-card:before{content:"";position:absolute;top:0;left:22px;right:22px;height:1px;background:linear-gradient(90deg,rgba(112,169,255,.55),transparent 80%);opacity:.7}
+body.trinity-page .person-card:hover,body.trinity-page .angel-card:hover{transform:translateY(-4px);border-color:rgba(112,169,255,.34);box-shadow:0 16px 35px rgba(0,0,0,.22)}
+body.trinity-page .person-card h3,body.trinity-page .angel-card h3{margin:3px 0 13px;color:#e1edff;font:700 16px/1.4 Manrope,Arial,sans-serif;letter-spacing:-.025em}
+body.trinity-page .person-card p,body.trinity-page .angel-card p{margin:9px 0 0;color:#a6afbd;font:400 12px/1.9 Manrope,Arial,sans-serif}
+body.trinity-page .person-card strong,body.trinity-page .angel-card strong{color:#d7e5f8;font-weight:700}
+body.trinity-page .verse{position:relative;margin:24px 0;padding:22px 24px 20px;border:1px solid rgba(112,169,255,.14);border-left:2px solid var(--home-blue);border-radius:0 9px 9px 0;background:rgba(112,169,255,.045);color:#e1edfc;text-align:left;font:italic 16px/1.85 Georgia,serif}
+body.trinity-page .verse small{display:block;margin-top:11px;color:#8eaed9;font:9px "DM Mono",monospace;letter-spacing:1.1px}
+body.trinity-page .theology-note{margin:23px 0 5px;padding:18px 20px;border:1px solid rgba(112,169,255,.13);border-left:2px solid var(--home-blue);border-radius:0 8px 8px 0;background:rgba(112,169,255,.045);color:#aebbd0;font:400 12px/1.95 Manrope,Arial,sans-serif}
+body.trinity-page .theology-note strong{color:#dceaff}
+body.trinity-page .section ul{margin:14px 0 20px;padding-left:1.25rem}
+body.trinity-page .section li{padding:4px 0;color:#a6afbd;font:400 12px/1.9 Manrope,Arial,sans-serif}
+body.trinity-page .section li strong{color:#dceaff}
+body.trinity-page .section .button{display:inline-flex;align-items:center;justify-content:center;margin:8px 8px 0 0;text-decoration:none}
+body.trinity-page .trinity-footer{margin-top:10px}
+@media(max-width:650px){
+ body.trinity-page .trinity-page-hero>.hero-kicker{padding:54px 18px 0;font-size:9px}
+ body.trinity-page .trinity-page-hero>h1{padding:10px 18px 0}
+ body.trinity-page .trinity-page-hero>.lead{padding:0 18px}
+ body.trinity-page .trinity-page-hero>.hero-meta{padding:22px 18px 32px}
+ body.trinity-page .person-grid,body.trinity-page .angel-grid{grid-template-columns:1fr}
+ body.trinity-page .person-card,body.trinity-page .angel-card{padding:20px}
+ body.trinity-page .trinity-hero{padding:25px 22px}
+}
+@media(prefers-reduced-motion:reduce){body.trinity-page .person-card,body.trinity-page .angel-card{transition:none!important}}
