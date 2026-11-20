@@ -104,3 +104,181 @@ body.trinity-page .verse {
 body.trinity-page .verse small { color:#8eaed9; font:9px "DM Mono",monospace; letter-spacing:1px; }
 body.trinity-page .section ul { padding-left:1.25rem; color:#a6afbd; }
 body.trinity-page .section li { padding:.25rem 0; }
+
+
+/* Saints collection — Apokolips-inspired page system. */
+body.saints-page .saints-hero { padding-bottom:34px; }
+body.saints-page .saints-hero h1 { letter-spacing:-.065em; }
+body.saints-page .saints-intro {
+  display:grid; grid-template-columns:minmax(0,1.45fr) minmax(220px,.8fr);
+  gap:clamp(18px,3vw,38px); align-items:start; max-width:none;
+  margin:0 0 24px; padding-bottom:25px; border-bottom:1px solid var(--home-line);
+}
+body.saints-page .saints-intro p {
+  margin:0; color:#a6afbd; font:400 13px/1.95 Manrope,Arial,sans-serif;
+}
+body.saints-page .saints-intro p + p {
+  padding:15px 17px; border:1px solid rgba(112,169,255,.13);
+  border-left:2px solid var(--home-blue); border-radius:0 8px 8px 0;
+  background:rgba(112,169,255,.045); color:#aebbd0; font-size:11px;
+}
+body.saints-page .saints-toolbar {
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,1.1fr) auto;
+  align-items:center; gap:12px; margin:24px 0 12px;
+}
+body.saints-page .saints-toolbar label {
+  color:#8798b1; font:500 9px "DM Mono",monospace; letter-spacing:1.3px;
+}
+body.saints-page .saints-search-field {
+  display:flex; align-items:center; gap:10px; min-height:46px;
+  padding:0 14px; border:1px solid rgba(112,169,255,.2); border-radius:8px;
+  background:rgba(6,10,17,.78); transition:border-color .2s,box-shadow .2s;
+}
+body.saints-page .saints-search-field:focus-within {
+  border-color:rgba(112,169,255,.68); box-shadow:0 0 0 3px rgba(112,169,255,.09);
+}
+body.saints-page .saints-search-field > span {
+  color:#83b7ff; font:24px/1 Arial,sans-serif;
+}
+body.saints-page .saints-search-field input {
+  width:100%; min-width:0; border:0; outline:0; background:transparent;
+  color:#eef4ff; font:500 12px Manrope,Arial,sans-serif;
+}
+body.saints-page .saints-search-field input::placeholder { color:#697588; opacity:1; }
+body.saints-page .saints-results {
+  margin:0; color:#8290a3; text-align:right; white-space:nowrap;
+  font:9px "DM Mono",monospace; letter-spacing:.4px;
+}
+body.saints-page .saints-no-results {
+  margin:14px 0 24px; padding:16px 18px; border:1px solid rgba(112,169,255,.16);
+  border-radius:8px; background:rgba(112,169,255,.045); color:#aab8cc;
+  font:12px/1.8 Manrope,Arial,sans-serif;
+}
+body.saints-page .saints-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));
+  align-items:stretch; gap:16px; margin:18px 0 42px;
+}
+body.saints-page .saint-card {
+  display:flex; min-width:0; flex-direction:column; overflow:hidden;
+  border:1px solid rgba(255,255,255,.09); border-radius:11px;
+  background:linear-gradient(155deg,rgba(17,23,33,.97),rgba(8,11,17,.99));
+  box-shadow:0 12px 32px rgba(0,0,0,.2);
+  transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease;
+}
+body.saints-page .saint-card:hover {
+  transform:translateY(-4px); border-color:rgba(112,169,255,.36);
+  box-shadow:0 20px 42px rgba(0,0,0,.32);
+}
+body.saints-page .saint-image {
+  height:clamp(175px,19vw,218px); flex:0 0 auto; position:relative;
+  overflow:hidden; display:flex; align-items:center; justify-content:center;
+  border-bottom:1px solid rgba(112,169,255,.13);
+  background:radial-gradient(circle at 50% 25%,#253a59 0,#111b2c 52%,#090d15 100%);
+}
+body.saints-page .saint-image:after {
+  content:""; position:absolute; inset:45% 0 0; pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(5,7,11,.34));
+}
+body.saints-page .saint-image img {
+  display:block; width:100%; height:100%; object-fit:cover; object-position:center 30%;
+  transition:transform .5s ease,filter .5s ease;
+}
+body.saints-page .saint-card:hover .saint-image img { transform:scale(1.035); filter:saturate(1.06); }
+body.saints-page .saint-image .fallback {
+  color:#a9caff; font:600 56px/1 Georgia,serif; letter-spacing:-.04em;
+  text-shadow:0 0 28px rgba(112,169,255,.28);
+}
+body.saints-page .saint-art-source {
+  z-index:2; right:10px; bottom:10px; padding:6px 9px;
+  border:1px solid rgba(174,202,242,.2); border-radius:5px;
+  background:rgba(5,8,14,.82); color:#b6d1f8;
+  font:8px "DM Mono",monospace; letter-spacing:.2px;
+}
+body.saints-page .saint-art-source:hover {
+  border-color:rgba(112,169,255,.58); background:#101d30; color:#fff;
+}
+body.saints-page .saint-body {
+  display:flex; flex:1; flex-direction:column; align-items:stretch;
+  padding:19px 19px 18px;
+}
+body.saints-page .saint-number {
+  color:#86b6fa; font:9px "DM Mono",monospace; letter-spacing:1.05px;
+  line-height:1.65; text-transform:uppercase;
+}
+body.saints-page .saint-body h2 {
+  margin:8px 0 10px; color:#eaf2ff; font:750 18px/1.35 Manrope,Arial,sans-serif;
+  letter-spacing:-.035em;
+}
+body.saints-page .saint-body > p {
+  margin:0; color:#a5afbe; font:400 12px/1.85 Manrope,Arial,sans-serif;
+}
+body.saints-page .saint-meta {
+  margin-top:16px; padding-top:13px; border-top:1px solid rgba(255,255,255,.075);
+}
+body.saints-page .saint-meta p {
+  margin:7px 0; color:#909bad; font:400 10px/1.8 Manrope,Arial,sans-serif;
+}
+body.saints-page .saint-meta strong { color:#d2dfef; font-weight:700; }
+body.saints-page .profile-view-button {
+  align-self:flex-start; margin-top:auto; padding:10px 13px;
+  border:1px solid rgba(112,169,255,.23); border-radius:6px;
+  background:rgba(112,169,255,.065); color:#c6ddff;
+  font:700 9px "DM Mono",monospace; letter-spacing:.45px;
+}
+body.saints-page .profile-view-button:hover {
+  border-color:rgba(112,169,255,.62); background:rgba(112,169,255,.14); color:#fff;
+}
+body.saints-page .apostles-section {
+  margin:52px 0 28px; padding:clamp(18px,3vw,30px);
+  border:1px solid var(--home-line); border-radius:12px;
+  background:linear-gradient(145deg,rgba(12,16,23,.9),rgba(7,9,14,.94));
+}
+body.saints-page .apostles-heading { max-width:none; margin:0 0 18px; }
+body.saints-page .apostles-heading h2 {
+  margin:7px 0 10px; color:#eaf2ff;
+  font:750 clamp(22px,3vw,30px)/1.3 Manrope,Arial,sans-serif; letter-spacing:-.04em;
+}
+body.saints-page .apostles-heading p {
+  max-width:850px; margin:0; color:#9da9ba; font:400 12px/1.9 Manrope,Arial,sans-serif;
+}
+body.saints-page .apostle-portrait {
+  height:clamp(140px,16vw,175px); display:flex; align-items:center; justify-content:center;
+  border-bottom:1px solid rgba(112,169,255,.13);
+  background:radial-gradient(circle at 50% 30%,rgba(74,119,181,.3),#172338 52%,#0b111b 100%);
+}
+body.saints-page .apostle-portrait span {
+  padding:16px; color:#c8dcfb; font:700 clamp(20px,3vw,28px)/1.3 Manrope,Arial,sans-serif;
+  letter-spacing:-.04em; text-shadow:0 4px 24px #0008;
+}
+body.saints-page .saint-note {
+  margin:30px 0 20px; padding:16px 18px; border:1px solid rgba(112,169,255,.14);
+  border-left:2px solid var(--home-blue); border-radius:0 8px 8px 0;
+  background:rgba(112,169,255,.04); color:#9eacc0; font:11px/1.9 Manrope,Arial,sans-serif;
+}
+body.saints-page .saint-note strong { color:#d8e6fa; }
+body.saints-page .saint-sources {
+  margin:20px 0 26px; padding-top:18px; border-top:1px solid var(--home-line);
+}
+body.saints-page .saint-sources h2 {
+  margin:0 0 10px; color:#e9f1fc; font:700 20px Manrope,Arial,sans-serif;
+}
+body.saints-page .saint-sources p { color:#95a1b2; font:11px/1.9 Manrope,Arial,sans-serif; }
+body.saints-page .saint-sources a { color:#9bc4ff; text-decoration:underline; text-decoration-color:rgba(155,196,255,.35); text-underline-offset:3px; }
+body.saints-page .page-footer { background:rgba(5,6,9,.55); }
+
+@media(max-width:720px) {
+  body.saints-page .saints-intro { grid-template-columns:1fr; gap:12px; }
+  body.saints-page .saints-toolbar { grid-template-columns:1fr; gap:8px; }
+  body.saints-page .saints-results { text-align:left; }
+  body.saints-page .saints-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr)); }
+  body.saints-page .apostles-section { margin-top:36px; padding:14px; }
+}
+@media(max-width:460px) {
+  body.saints-page .saints-grid { grid-template-columns:1fr; }
+  body.saints-page .saint-image { height:210px; }
+  body.saints-page .saint-body { padding:17px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body.saints-page .saint-card, body.saints-page .saint-image img { transition:none!important; }
+}
+body.saints-page [hidden] { display:none!important; }
