@@ -1,4 +1,4 @@
-/* Shared navigation for every Constantine page. */
+/* Shared, accessible navigation for every Constantine page. */
 (() => {
   'use strict';
 
@@ -39,6 +39,13 @@
   mark.setAttribute('aria-hidden', 'true');
   brand.append(mark);
 
+  const toggle = document.createElement('button');
+  toggle.className = 'nav-toggle';
+  toggle.type = 'button';
+  toggle.textContent = 'Menu';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'constantine-nav-links');
+
   const links = document.createElement('div');
   links.className = 'nav-links';
   links.id = 'constantine-nav-links';
@@ -52,7 +59,28 @@
     links.append(link);
   });
 
-  nav.append(brand, links);
+  const closeMenu = () => {
+    links.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = 'Menu';
+  };
+
+  toggle.addEventListener('click', () => {
+    const expanded = !links.classList.contains('is-open');
+    links.classList.toggle('is-open', expanded);
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? 'Close' : 'Menu';
+  });
+
+  links.addEventListener('click', event => {
+    if (event.target instanceof HTMLAnchorElement) closeMenu();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  nav.append(brand, toggle, links);
   header.replaceChildren(nav);
   document.body.classList.add('constantine-nav-active');
 })();
