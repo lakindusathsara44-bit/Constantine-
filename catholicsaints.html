@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08090d">
+<meta name="theme-color" content="#050609">
 <meta name="description" content="Saints, the Twelve Apostles, Saint Paul and other early Christian witnesses, with biographies and Scripture references.">
-<title>Saints of the Time of Jesus | Constantine</title>
+<title>Saints | Constantine — Faith, History &amp; Tradition</title>
 <link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/home-apokolips.css?v=1">
+<link rel="stylesheet" href="assets/page-apokolips.css?v=2">
 <style>
 .saints-intro{max-width:850px;margin:0 auto 2rem;color:#c5c8d0;line-height:1.8}
 .saints-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.25rem;margin:2rem 0 4rem}
@@ -40,17 +42,26 @@
 .apostles-section{margin:3.5rem 0 2rem}.apostles-heading{max-width:900px;margin:0 auto 1.2rem}.apostles-heading h2{margin:.45rem 0;color:#f0f1f4;font-size:clamp(1.55rem,3vw,2.1rem)}.apostles-heading p{color:#c5c8d0;line-height:1.75}.apostle-portrait{height:170px;background:radial-gradient(circle at 50% 35%,#354257 0,#182131 48%,#0c111a 100%);border-bottom:1px solid rgba(198,203,210,.18)}.apostle-portrait span{font-family:Georgia,serif;font-size:clamp(1.45rem,4vw,2.15rem);font-weight:600;letter-spacing:.04em;color:#d8c49a;text-align:center;padding:1rem;text-shadow:0 3px 18px #000}.apostles-section .saint-card{min-width:0}
 </style><script src="assets/site-nav.js?v=3" defer></script>
 </head>
-<body><a class="home-back" href="HomeC.html" aria-label="Back to Constantine home">← Back to Home</a>
+<body class="home-apokolips page-apokolips saints-page">
 <canvas id="particles" aria-hidden="true"></canvas>
 
 <main>
-<section class="hero"><div class="eyebrow">Constantine · Christian knowledge</div><h1>SAINTS</h1><p class="lead">Saints, the Twelve Apostles and the first witnesses of the Church</p></section>
+<section class="hero saints-hero"><div class="eyebrow">THE COMMUNION OF SAINTS · CHRISTIAN WITNESS</div><h1>SAINTS</h1><p class="lead">Saints, the Twelve Apostles and the first witnesses of the Church</p></section>
 <div class="wrap">
 <section class="section">
 <div class="saints-intro">
 <p>This collection presents saints and holy people connected with Jesus and the beginnings of Christianity. It includes His family and friends, people who encountered Him, the Twelve Apostles, and other important witnesses of the early Church.</p>
 <p>Dates from the first century are often uncertain. Where Scripture and reliable historical sources do not give a birth or death year, this page says <em>unknown</em> rather than presenting a guess as fact.</p>
 </div>
+<div class="saints-toolbar" role="search" aria-label="Search the saints collection">
+  <label for="saintsSearch">SEARCH THE COLLECTION</label>
+  <div class="saints-search-field">
+    <span aria-hidden="true">⌕</span>
+    <input id="saintsSearch" type="search" autocomplete="off" placeholder="Search saints, apostles, or Scripture references">
+  </div>
+  <p class="saints-results" id="saintsResults" aria-live="polite">Loading profiles…</p>
+</div>
+<p class="saints-no-results" id="saintsNoResults" hidden>No profiles match that search. Try another name or Scripture reference.</p>
 <div class="saints-grid">
 <article class="saint-card"><div class="saint-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sassoferrato_-_The_Virgin_in_Prayer_-_Google_Art_Project.jpg" alt="Traditional painting of the Virgin Mary" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.saint-image').classList.remove('image-failed')" onerror="this.style.display='none';this.closest('.saint-image').classList.add('image-failed')"><span class="fallback">M</span></div><div class="saint-body"><span class="saint-number">01 · First</span><h2>St. Mary — The Blessed Virgin</h2><p>Mary was the mother of Jesus. The Gospels remember her faith, humility, courage and presence at key moments in Christ’s life, including the Crucifixion.</p><div class="saint-meta"><p><strong>Feast:</strong> 1 January (Mary, Mother of God); 15 August (Assumption)</p><p><strong>Life:</strong> First century BC–first century AD; exact years unknown.</p><p><strong>Death:</strong> Not historically established. Catholic teaching celebrates her Assumption; traditions differ on the details of her earthly end.</p><p><strong>Why remembered:</strong> Her “yes” to God and her unique role as the mother of Jesus (Luke 1:26–38).</p></div></div></article>
 <article class="saint-card"><div class="saint-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Joseph_with_the_Child_Jesus.jpg" alt="Traditional image of Saint Joseph with the child Jesus" loading="lazy" onerror="this.style.display='none'"><span class="fallback">J</span></div><div class="saint-body"><span class="saint-number">02 · Second</span><h2>St. Joseph</h2><p>Joseph was the husband of Mary and the earthly guardian of Jesus. A carpenter or craftsman by tradition, he protected and cared for the Holy Family.</p><div class="saint-meta"><p><strong>Feast:</strong> 19 March; St. Joseph the Worker — 1 May</p><p><strong>Life:</strong> First century BC–first century AD; exact years unknown.</p><p><strong>Death:</strong> Unknown; Christian tradition generally holds that he died before Jesus began His public ministry.</p><p><strong>Why remembered:</strong> Faithfulness, humility, obedience and care for the Holy Family (Matthew 1–2).</p></div></div></article>
@@ -119,7 +130,11 @@
 <div class="saint-sources"><h2>Scripture &amp; reference notes</h2><p>Primary biblical references are shown on each profile. For the joint celebration of Saints Martha, Mary and Lazarus on 29 July, see the <a href="https://www.usccb.org/prayer-worship/liturgical-year/saints-martha-mary-and-lazarus" target="_blank" rel="noopener">USCCB liturgical note</a>. For Joseph of Arimathea, see the <a href="https://www.newadvent.org/cathen/08520a.htm" target="_blank" rel="noopener">Catholic Encyclopedia</a>; for Nicodemus, see the <a href="https://www.newadvent.org/cathen/11066b.htm" target="_blank" rel="noopener">Catholic Encyclopedia entry</a>; for Cleopas, see the <a href="https://www.newadvent.org/cathen/04048b.htm" target="_blank" rel="noopener">Catholic Encyclopedia entry</a>.</p></div>
 <a class="button" href="HomeC.html">Return Home</a>
 </section></div></main>
-<footer class="footer">CONSTANTINE · FAITH · HISTORY · TRADITION<br><span>Educational resource. Scripture references are from the NRSV.</span></footer>
+<footer class="footer page-footer">
+  <div class="footer-brand"><strong>CONSTANTINE<span> ✦</span></strong><small>FAITH · HISTORY · TRADITION</small></div>
+  <p>Created as an educational Christian resource.<br>Scripture references are from the NRSV.</p>
+  <a class="about-us-link" href="https://www.apokolips.xyz/info.html" target="_blank" rel="noopener noreferrer">About us <span aria-hidden="true">↗</span></a>
+</footer>
 <script src="assets/script.js"></script>
 
 <script>
@@ -153,4 +168,48 @@ document.querySelectorAll('.saint-image img').forEach((img) => {
 
   document.querySelectorAll('.saint-card').forEach(card=>{if(card.querySelector('.profile-view-button'))return;const btn=document.createElement('button');btn.type='button';btn.className='profile-view-button';btn.textContent='View full profile →';btn.addEventListener('click',()=>openProfile(card.outerHTML));card.querySelector('.saint-body')?.appendChild(btn)});
 })();
-</script><div id="google_translate_element" aria-hidden="true"></div><script src="assets/language.js"></script></body></html></html>
+</script><div id="google_translate_element" aria-hidden="true"></div><script src="assets/language.js"></script><script>
+/* Search all saint and apostle profiles without changing their original content. */
+(() => {
+  const search = document.getElementById('saintsSearch');
+  const results = document.getElementById('saintsResults');
+  const emptyState = document.getElementById('saintsNoResults');
+  if (!search || !results || !emptyState) return;
+
+  const cards = Array.from(document.querySelectorAll('.saint-card'));
+  const grids = Array.from(document.querySelectorAll('.saints-grid'));
+  const total = cards.length;
+  const searchText = new Map(cards.map(card => {
+    const content = card.cloneNode(true);
+    content.querySelectorAll('.profile-view-button, .saint-art-source').forEach(control => control.remove());
+    return [card, content.textContent.toLocaleLowerCase()];
+  }));
+
+  const updateResults = () => {
+    const query = search.value.trim().toLocaleLowerCase();
+    let visible = 0;
+
+    cards.forEach(card => {
+      const matches = !query || searchText.get(card).includes(query);
+      card.hidden = !matches;
+      if (matches) visible += 1;
+    });
+
+    grids.forEach(grid => {
+      const hasVisibleCard = Array.from(grid.querySelectorAll('.saint-card')).some(card => !card.hidden);
+      grid.hidden = !hasVisibleCard;
+      const group = grid.closest('.apostles-section');
+      if (group) group.hidden = !hasVisibleCard;
+    });
+
+    results.textContent = query
+      ? `Showing ${visible} of ${total} profiles`
+      : `All ${total} profiles`;
+    emptyState.hidden = visible !== 0;
+  };
+
+  search.addEventListener('input', updateResults);
+  updateResults();
+})();
+</script>
+</body></html>
