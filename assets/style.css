@@ -397,41 +397,65 @@ body.constantine-nav-active .carlo-portal {
 }
 
 
-/* Keep the full navigation accessible without crowding tablet and phone screens */
-.site-header .nav-toggle {
-  display: none;
+
+
+/* Navigation stays visible: no orphaned Menu-only button on small screens */
+.site-header .nav-links,
+.site-header .nav-links.is-open {
+  display: flex !important;
+  flex: 1 1 auto;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 8px 16px;
-  border: 1px solid rgba(185, 155, 85, .45);
-  border-radius: 8px;
-  background: rgba(185, 155, 85, .08);
-  color: #e8d4a6;
-  font: 700 .72rem Arial, sans-serif;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  cursor: pointer;
+  align-content: center;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
-.site-header .nav-toggle:hover,
-.site-header .nav-toggle:focus-visible {
-  border-color: var(--gold);
-  background: rgba(185, 155, 85, .16);
-  outline-offset: 3px;
+.site-header .nav-toggle {
+  display: none !important;
 }
 
 @media (max-width: 900px) {
-  .site-header .nav-toggle {
-    display: inline-flex;
+  .site-header .nav-links,
+  .site-header .nav-links.is-open {
+    display: flex !important;
+    width: 100%;
+    flex: 0 1 auto;
+    justify-content: center;
   }
+}
 
-  .site-header .nav-links {
-    display: none !important;
-    width: min(100%, 620px);
-  }
-
+@media (max-width: 560px) {
+  .site-header .nav-links,
   .site-header .nav-links.is-open {
     display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    justify-content: stretch;
+    gap: 6px 8px;
+  }
+
+  .site-header .nav-links > a {
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    padding: 7px 4px;
+    overflow-wrap: anywhere;
+    text-align: center;
+    font-size: .62rem;
+    letter-spacing: .02em;
+  }
+
+  .site-header .nav-links > .settings-nav {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header .nav-links,
+  .site-header .nav-links.is-open {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
