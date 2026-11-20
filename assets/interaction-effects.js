@@ -51,7 +51,7 @@
   });
 
   if (!reduceMotion && 'IntersectionObserver' in window) {
-    const revealSelector = 'main .section,main .ruler-card,main .miracle-card,main .quote-card,main .person,main .prophet-card,main .prayer-panel,main .saint-card,main .feature-card,main .explore-card';
+    const revealSelector = 'main .section,main .miracle-card,main .quote-card,main .person,main .prophet-card,main .prayer-panel,main .saint-card,main .feature-card,main .explore-card';
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
