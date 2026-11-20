@@ -13,7 +13,7 @@
     ['People', 'resp.html'],
     ['Bible Quotes', 'Quotes.html'],
     ['Prayer Wall', 'PrayerWall.html'],
-    ['Settings', 'settings.html', 'settings-nav']
+    ['Settings', 'settings.html']
   ];
 
   const currentPage = (window.location.pathname.split('/').filter(Boolean).pop() || 'HomeC.html').toLowerCase();
