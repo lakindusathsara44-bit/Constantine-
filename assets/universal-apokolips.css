@@ -1,0 +1,346 @@
+/* Constantine — site-wide Apokolips visual system and interaction polish. */
+body.home-apokolips {
+  --gold: var(--home-blue);
+  --silver: #dce8fa;
+  --muted: #9299a8;
+  --line: var(--home-line);
+  color-scheme: dark;
+}
+body.home-apokolips .eyebrow,
+body.home-apokolips .gold,
+body.home-apokolips .section h2:after,
+body.home-apokolips .quote-mark,
+body.home-apokolips .quote-ref,
+body.home-apokolips .ruler-era,
+body.home-apokolips .prophet-number,
+body.home-apokolips .prayer-category {
+  color: #91bfff !important;
+}
+body.home-apokolips .section h2:after {
+  background: linear-gradient(90deg,var(--home-blue),var(--home-cyan)) !important;
+}
+body.home-apokolips .hero .eyebrow,
+body.home-apokolips .wrap .eyebrow {
+  color: #91a7c4 !important;
+  font: 10px "DM Mono",monospace;
+  letter-spacing: 1.5px;
+}
+body.home-apokolips .kings-intro,
+body.home-apokolips .intro,
+body.home-apokolips .prophets-intro,
+body.home-apokolips .source-note,
+body.home-apokolips .note,
+body.home-apokolips .kings-note,
+body.home-apokolips .prophet-note,
+body.home-apokolips .miracles-intro,
+body.home-apokolips .note-box,
+body.home-apokolips .prophet-sources,
+body.home-apokolips .kings-sources {
+  color: #aab6c8 !important;
+}
+body.home-apokolips .kings-tools,
+body.home-apokolips .toolbar,
+body.home-apokolips .prayer-toolbar { gap: 12px; }
+body.home-apokolips input:not([type="checkbox"]):not([type="radio"]),
+body.home-apokolips select,
+body.home-apokolips textarea {
+  color: #edf4ff !important;
+  background: #090e17 !important;
+  border: 1px solid rgba(112,169,255,.23) !important;
+  border-radius: 8px;
+  accent-color: var(--home-blue);
+}
+body.home-apokolips input::placeholder,
+body.home-apokolips textarea::placeholder { color: #6f7d91 !important; opacity: 1; }
+body.home-apokolips input:focus,
+body.home-apokolips select:focus,
+body.home-apokolips textarea:focus {
+  outline: none;
+  border-color: rgba(112,169,255,.72) !important;
+  box-shadow: 0 0 0 3px rgba(112,169,255,.12) !important;
+}
+body.home-apokolips .kings-search,
+body.home-apokolips .toolbar input,
+body.home-apokolips .prayer-toolbar input { min-height: 48px; padding: 12px 15px; }
+body.home-apokolips .ruler-card,
+body.home-apokolips .miracle-card,
+body.home-apokolips .quote-card,
+body.home-apokolips .person,
+body.home-apokolips .prophet-card,
+body.home-apokolips .prayer-panel,
+body.home-apokolips .prayer-card,
+body.home-apokolips .kings-sources,
+body.home-apokolips .note-box,
+body.home-apokolips .note,
+body.home-apokolips .prophet-sources {
+  border-color: rgba(112,169,255,.15) !important;
+  background: linear-gradient(145deg,rgba(17,23,33,.97),rgba(8,11,17,.98)) !important;
+  box-shadow: 0 16px 42px rgba(0,0,0,.22);
+}
+body.home-apokolips .ruler-card,
+body.home-apokolips .miracle-card,
+body.home-apokolips .quote-card,
+body.home-apokolips .person,
+body.home-apokolips .prophet-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .24s ease,border-color .24s ease,box-shadow .24s ease,background .24s ease;
+}
+body.home-apokolips .ruler-card:hover,
+body.home-apokolips .miracle-card:hover,
+body.home-apokolips .quote-card:hover,
+body.home-apokolips .person:hover,
+body.home-apokolips .prophet-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(112,169,255,.48) !important;
+  box-shadow: 0 20px 48px rgba(0,0,0,.34),0 0 28px rgba(112,169,255,.055);
+}
+body.home-apokolips .ruler-copy,
+body.home-apokolips .miracle-copy,
+body.home-apokolips .prophet-body { color: #b4bfd0; }
+body.home-apokolips .ruler-copy h3,
+body.home-apokolips .miracle-copy h3,
+body.home-apokolips .prophet-body h2,
+body.home-apokolips .person h2,
+body.home-apokolips .quote-card blockquote { color: #e3edfb !important; }
+body.home-apokolips .ruler-copy p,
+body.home-apokolips .miracle-copy p,
+body.home-apokolips .prophet-body p,
+body.home-apokolips .person p { color: #a7b2c3 !important; }
+body.home-apokolips .ruler-facts,
+body.home-apokolips .person .meta,
+body.home-apokolips .person .sources,
+body.home-apokolips .prayer-card-bottom { border-color: rgba(255,255,255,.09) !important; }
+body.home-apokolips .ruler-source,
+body.home-apokolips .read-nrsv,
+body.home-apokolips .sources a,
+body.home-apokolips .prophet-sources a,
+body.home-apokolips .kings-sources a,
+body.home-apokolips .icon-credit a {
+  color: #a9caff !important;
+  text-decoration-color: rgba(112,169,255,.42);
+  text-underline-offset: 3px;
+}
+body.home-apokolips .ruler-source:hover,
+body.home-apokolips .read-nrsv:hover,
+body.home-apokolips .sources a:hover,
+body.home-apokolips .prophet-sources a:hover,
+body.home-apokolips .kings-sources a:hover { color: #fff !important; }
+body.home-apokolips .kings-section-title,
+body.home-apokolips .section-title {
+  color: #dce8fa !important;
+  letter-spacing: -.025em;
+}
+body.home-apokolips .kings-section-title:after,
+body.home-apokolips .section-title:after {
+  background: linear-gradient(90deg,rgba(112,169,255,.42),transparent) !important;
+}
+body.home-apokolips .kings-note,
+body.home-apokolips .note-box,
+body.home-apokolips .prophet-note,
+body.home-apokolips .note {
+  border-left: 2px solid var(--home-blue) !important;
+  background: rgba(112,169,255,.055) !important;
+  border-radius: 0 9px 9px 0;
+}
+body.home-apokolips .art-fallback,
+body.home-apokolips .portrait-fallback,
+body.home-apokolips .image-fallback { color: #9fc5ff !important; }
+body.home-apokolips .miracle-grid,
+body.home-apokolips .kings-grid,
+body.home-apokolips .prophets-grid,
+body.home-apokolips .quote-grid { gap: 15px; }
+body.home-apokolips .miracle-card .artwork,
+body.home-apokolips .ruler-art,
+body.home-apokolips .prophet-image,
+body.home-apokolips .portrait {
+  background: radial-gradient(ellipse at 50% 35%,rgba(112,169,255,.14),#0b1019 72%) !important;
+}
+body.home-apokolips .miracle-card .artwork img,
+body.home-apokolips .ruler-art img,
+body.home-apokolips .prophet-image img,
+body.home-apokolips .portrait img { transition: transform .45s ease,filter .45s ease; }
+body.home-apokolips .miracle-card:hover .artwork img,
+body.home-apokolips .ruler-card:hover .ruler-art img,
+body.home-apokolips .prophet-card:hover .prophet-image img,
+body.home-apokolips .person:hover .portrait img {
+  transform: scale(1.035);
+  filter: saturate(1.08) contrast(1.03);
+}
+body.home-apokolips .miracle-number,
+body.home-apokolips .kind,
+body.home-apokolips .count,
+body.home-apokolips .kings-count,
+body.home-apokolips .prayer-meta,
+body.home-apokolips .prayer-card-date { color: #8296b2 !important; }
+body.home-apokolips .scripture,
+body.home-apokolips .verse {
+  border-left-color: var(--home-blue) !important;
+  background: rgba(112,169,255,.055) !important;
+  color: #dce8f8 !important;
+}
+body.home-apokolips .scripture small,
+body.home-apokolips .verse small { color: #9fc5ff !important; }
+body.home-apokolips .prayer-page { color: #e7eef9; }
+body.home-apokolips .prayer-intro h1,
+body.home-apokolips .prayer-panel h2 {
+  color: #edf4ff !important;
+  font-family: Manrope,Arial,sans-serif;
+  letter-spacing: -.04em;
+}
+body.home-apokolips .prayer-panel { border-radius: 12px; }
+body.home-apokolips .prayer-form label { color: #bac8da !important; }
+body.home-apokolips .prayer-submit,
+body.home-apokolips .prayer-refresh,
+body.home-apokolips .prayed-button {
+  border: 1px solid rgba(112,169,255,.34) !important;
+  border-radius: 8px;
+  background: rgba(112,169,255,.09) !important;
+  color: #dceaff !important;
+  transition: transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease;
+}
+body.home-apokolips .prayer-submit:hover,
+body.home-apokolips .prayer-refresh:hover,
+body.home-apokolips .prayed-button:hover {
+  border-color: rgba(112,169,255,.72) !important;
+  background: rgba(112,169,255,.16) !important;
+  box-shadow: 0 8px 26px rgba(112,169,255,.1);
+}
+body.home-apokolips .prayed-button.is-prayed {
+  border-color: rgba(128,190,157,.42) !important;
+  color: #b7dfc8 !important;
+  background: rgba(75,130,91,.12) !important;
+}
+body.home-apokolips .prayer-category {
+  border-color: rgba(112,169,255,.3) !important;
+  background: rgba(112,169,255,.06);
+}
+body.home-apokolips .prayer-guidance {
+  border-left: 2px solid var(--home-blue);
+  background: rgba(112,169,255,.055);
+  color: #abb9cd;
+}
+body.home-apokolips .prayer-success { border-color: rgba(128,190,157,.35); }
+body.home-apokolips .profile-viewer {
+  background: rgba(1,4,9,.84);
+  backdrop-filter: blur(12px);
+}
+body.home-apokolips .profile-viewer-panel {
+  border: 1px solid rgba(112,169,255,.24);
+  border-radius: 14px;
+  background: linear-gradient(145deg,#111925,#080c13);
+  box-shadow: 0 30px 90px rgba(0,0,0,.58);
+  color: #dce8f8;
+}
+body.home-apokolips .profile-viewer-close,
+body.home-apokolips .profile-view-button {
+  min-height: 40px;
+  padding: 10px 14px;
+  border: 1px solid rgba(112,169,255,.3);
+  border-radius: 7px;
+  background: rgba(112,169,255,.08);
+  color: #dceaff;
+  cursor: pointer;
+  transition: transform .2s ease,border-color .2s ease,background .2s ease;
+}
+body.home-apokolips .profile-viewer-close:hover,
+body.home-apokolips .profile-view-button:hover {
+  border-color: var(--home-blue);
+  background: rgba(112,169,255,.16);
+}
+body.home-apokolips .about-us-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid rgba(112,169,255,.23);
+  border-radius: 7px;
+  color: #a9caff !important;
+  font: 700 10px "DM Mono",monospace;
+  letter-spacing: .07em;
+  transition: transform .2s ease,border-color .2s ease,background .2s ease;
+}
+body.home-apokolips .about-us-link:hover {
+  border-color: rgba(112,169,255,.65);
+  background: rgba(112,169,255,.11);
+  color: #fff !important;
+}
+body.home-apokolips footer.footer:not(.home-footer):not(.page-footer) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 22px;
+  text-align: center;
+  border-top-color: rgba(255,255,255,.09);
+  color: #78869a;
+}
+body.home-apokolips .footer .about-us-link { margin: 2px; }
+body.home-apokolips .no-results,
+body.home-apokolips .empty {
+  border-color: rgba(112,169,255,.25) !important;
+  color: #aab8cc !important;
+  background: rgba(112,169,255,.035);
+}
+body.home-apokolips .feature-card,
+body.home-apokolips .explore-card,
+body.home-apokolips .tile { border-color: rgba(112,169,255,.16); }
+body.home-apokolips button,
+body.home-apokolips .button { cursor: pointer; }
+body.home-apokolips :is(a,button,input,select,textarea,summary,[role="button"],[role="tab"],.tile,.feature-card,.explore-card,.quote-card,.ruler-card,.miracle-card,.person,.saint-card,.prophet-card,.person-card,.angel-card,.prayer-card) {
+  -webkit-tap-highlight-color: transparent;
+  scroll-margin-top: 90px;
+}
+body.home-apokolips :is(a,button,[role="button"],.tile,.feature-card,.explore-card,.quote-card,.ruler-card,.miracle-card,.person,.saint-card,.prophet-card,.person-card,.angel-card,.prayer-card):active {
+  filter: brightness(1.08);
+}
+body.home-apokolips :is(a,button,input,select,textarea,[role="button"],[role="tab"]):focus-visible {
+  outline: 2px solid rgba(139,216,237,.8);
+  outline-offset: 3px;
+}
+.interaction-ripple {
+  position: fixed;
+  z-index: 9999;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle,rgba(139,216,237,.35) 0,rgba(112,169,255,.2) 38%,rgba(112,169,255,0) 74%);
+  transform: translate(-50%,-50%) scale(.15);
+  animation: constantineClickRipple .58s cubic-bezier(.16,.7,.25,1) forwards;
+  mix-blend-mode: screen;
+}
+.interaction-pressed { animation: constantineClickPulse .24s ease-out; }
+@keyframes constantineClickRipple {
+  0% { opacity: .9; transform: translate(-50%,-50%) scale(.15); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(8); }
+}
+@keyframes constantineClickPulse {
+  0% { filter: brightness(1.35); }
+  100% { filter: brightness(1); }
+}
+@media(max-width:820px) { body.home-apokolips .prayer-shell { grid-template-columns: minmax(0,1fr); } }
+@media(max-width:650px) {
+  body.page-apokolips .hero { padding: 54px 18px 34px; }
+  body.page-apokolips .wrap { padding: 0 14px 48px; }
+  body.home-apokolips .kings-grid,
+  body.home-apokolips .miracle-grid,
+  body.home-apokolips .quote-grid,
+  body.home-apokolips .prophets-grid,
+  body.home-apokolips .grid { grid-template-columns: minmax(0,1fr); }
+  body.home-apokolips .toolbar { grid-template-columns: minmax(0,1fr); }
+  body.home-apokolips footer.footer:not(.home-footer):not(.page-footer) { flex-direction: column; }
+  body.home-apokolips .profile-viewer-panel { width: min(94vw,760px); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .interaction-ripple,.interaction-pressed { animation: none !important; }
+  body.home-apokolips *,
+  body.home-apokolips *::before,
+  body.home-apokolips *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
