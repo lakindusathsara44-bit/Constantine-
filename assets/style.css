@@ -202,3 +202,196 @@ main {
     transform: none;
   }
 }
+
+
+/* Consistent site shell, content width, and card alignment */
+.site-header {
+  padding: 0;
+  text-align: left;
+}
+
+.site-header .nav {
+  width: min(100%, 1120px);
+  min-height: 64px;
+  margin-inline: auto;
+}
+
+.site-header .nav-links > a {
+  padding: 7px 9px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #c8ccd3;
+  text-decoration: none;
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+
+.site-header .nav-links > a:hover {
+  border-color: rgba(185, 155, 85, .35);
+  background: rgba(185, 155, 85, .08);
+  color: #fff;
+}
+
+.site-header .nav-links > a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.site-header .nav-links > a[aria-current="page"] {
+  border-color: rgba(185, 155, 85, .42);
+  background: rgba(185, 155, 85, .12);
+  color: #e8d4a6;
+}
+
+body.constantine-nav-active .home-back {
+  display: none !important;
+}
+
+body.constantine-nav-active .wrap {
+  width: min(100%, 1120px);
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 22px;
+}
+
+body.constantine-nav-active .wrap.kings-page {
+  max-width: 1120px;
+}
+
+.kings-grid,
+.miracle-grid,
+.saints-grid,
+.prophets-grid,
+.person-grid,
+.angel-grid,
+.quote-grid {
+  align-items: stretch;
+}
+
+.kings-grid > *,
+.miracle-grid > *,
+.saints-grid > *,
+.prophets-grid > *,
+.person-grid > *,
+.angel-grid > *,
+.quote-grid > * {
+  min-width: 0;
+}
+
+.ruler-card,
+.miracle-card,
+.saint-card,
+.prophet-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+}
+
+.ruler-art,
+.artwork,
+.saint-image,
+.prophet-image {
+  flex: 0 0 auto;
+}
+
+.ruler-copy,
+.miracle-copy,
+.saint-body,
+.prophet-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ruler-facts,
+.miracle-copy .scripture,
+.saint-meta,
+.prophet-meta {
+  margin-top: auto;
+}
+
+body.constantine-nav-active .person {
+  grid-template-columns: minmax(0, 145px) minmax(0, 1fr);
+  align-items: start;
+  min-width: 0;
+}
+
+body.constantine-nav-active .person > * {
+  min-width: 0;
+}
+
+.prayer-shell > * {
+  min-width: 0;
+}
+
+.profile-viewer-panel,
+.profile-viewer-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+body.constantine-nav-active .carlo-portal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: max-content;
+  max-width: calc(100% - 28px);
+  margin: 14px max(14px, calc((100% - 1076px) / 2)) 0 auto;
+}
+
+@media (max-width: 900px) {
+  .site-header .nav {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header .nav-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .site-header .nav-links > a {
+    padding: 6px 4px;
+    font-size: .6rem;
+    letter-spacing: .025em;
+  }
+
+  .site-header .nav-links > .settings-nav {
+    grid-column: 1 / -1;
+  }
+
+  body.constantine-nav-active .wrap {
+    width: 100%;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  body.constantine-nav-active .person {
+    grid-template-columns: minmax(92px, 112px) minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  body.constantine-nav-active .carlo-portal {
+    margin: 10px 14px 0 auto;
+  }
+
+  .ruler-copy,
+  .miracle-copy,
+  .saint-body,
+  .prophet-body {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header .nav-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-header .nav-links > a {
+    font-size: .58rem;
+  }
+}
