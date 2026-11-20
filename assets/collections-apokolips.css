@@ -257,3 +257,23 @@ body.collection-page .home-back{display:none!important}
 @media(max-width:760px){body.collection-page .hero{padding:56px 18px 34px}body.collection-page .wrap{padding:0 16px 58px}.collection-kings .kings-tools{display:grid;grid-template-columns:1fr}.collection-kings .kings-search{min-width:0;width:100%}.collection-kings .ruler-art{height:210px}.collection-miracles .artwork{height:210px}}
 @media(max-width:560px){.collection-page .profile-viewer{padding:8px}.collection-page .profile-viewer-panel{max-height:94vh;border-radius:14px}.collection-prophets .prophet-image{height:205px}.collection-prophets .prophet-body{padding:17px}.collection-prophets .artwork-item img{height:125px}.collection-miracles .miracles-intro{padding:20px}.collection-miracles .miracle-copy{padding:17px}}
 @media(prefers-reduced-motion:reduce){.collection-kings *,.collection-kings *::before,.collection-kings *::after,.collection-miracles *,.collection-miracles *::before,.collection-miracles *::after,.collection-prophets *,.collection-prophets *::before,.collection-prophets *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Kings profile visibility and modal motion fix */
+@keyframes kingsCardEnter {
+  from { opacity:.15; transform:translateY(14px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.collection-kings .ruler-card { opacity:1; animation:kingsCardEnter .62s cubic-bezier(.2,.7,.2,1) both; }
+.collection-kings .ruler-copy p { opacity:1; visibility:visible; }
+.collection-kings .profile-viewer.open .profile-viewer-panel { animation:kingsModalEnter .34s cubic-bezier(.2,.75,.25,1) both; }
+@keyframes kingsModalEnter {
+  from { opacity:0; transform:translateY(18px) scale(.985); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+.collection-kings .profile-viewer-content .ruler-copy { padding:20px 4px 6px; }
+.collection-kings .profile-viewer-content .ruler-copy p { display:block; max-height:none; overflow:visible; opacity:1; visibility:visible; }
+.collection-kings .profile-view-button { display:inline-flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; padding:10px 15px; border:1px solid rgba(117,173,255,.42); border-radius:10px; background:linear-gradient(135deg,rgba(42,76,122,.55),rgba(10,20,35,.96)); color:#e6f2ff; font:700 .78rem Manrope,Arial,sans-serif; transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }
+.collection-kings .profile-view-button:hover { transform:translateY(-2px); border-color:rgba(139,216,237,.8); box-shadow:0 8px 24px rgba(52,126,191,.22); }
+@media(prefers-reduced-motion:reduce) {
+  .collection-kings .ruler-card, .collection-kings .profile-viewer.open .profile-viewer-panel { animation:none!important; }
+}
