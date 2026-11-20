@@ -39,8 +39,22 @@
   mark.setAttribute('aria-hidden', 'true');
   brand.append(mark);
 
+  const toggle = document.createElement('button');
+  toggle.className = 'nav-toggle';
+  toggle.type = 'button';
+  toggle.textContent = '☰ Menu';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'constantine-nav-links');
+
   const links = document.createElement('div');
   links.className = 'nav-links';
+  links.id = 'constantine-nav-links';
+
+  toggle.addEventListener('click', () => {
+    const expanded = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? '✕ Close' : '☰ Menu';
+  });
 
   pages.forEach(([label, href, className]) => {
     const link = document.createElement('a');
@@ -51,7 +65,7 @@
     links.append(link);
   });
 
-  nav.append(brand, links);
+  nav.append(brand, toggle, links);
   header.replaceChildren(nav);
   document.body.classList.add('constantine-nav-active');
 })();
