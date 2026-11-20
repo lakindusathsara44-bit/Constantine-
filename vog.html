@@ -7,47 +7,15 @@
 <meta name="description" content="Explore Abraham, Moses and Isaiah through Scripture, history and traditional religious art.">
 <title>Vog | Constantine</title>
 <link rel="stylesheet" href="assets/style.css?v=3">
-<style>
-.prophets-intro{max-width:850px;margin:0 auto 2rem;color:#c5c8d0;line-height:1.8}
-.prophets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.25rem;margin:2rem 0 4rem}
-.prophet-card{overflow:hidden;border:1px solid rgba(190,196,210,.22);border-radius:16px;background:linear-gradient(155deg,rgba(26,31,43,.92),rgba(9,11,17,.97));box-shadow:0 12px 35px rgba(0,0,0,.22);transition:transform .25s,border-color .25s}
-.prophet-card:hover{transform:translateY(-5px);border-color:rgba(202,174,111,.6)}
-.prophet-card-featured{border-color:rgba(202,174,111,.55);background:linear-gradient(155deg,rgba(38,34,27,.94),rgba(9,11,17,.98));box-shadow:0 14px 38px rgba(0,0,0,.3)}
-.prophet-card-featured .prophet-number{color:#e0c58b}
-.prophet-card-featured h2{font-size:1.4rem}
-.prophet-image{height:230px;background:#151923;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.prophet-image img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.artwork-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0 1rem 1rem}
-.artwork-item{min-width:0;border:1px solid rgba(190,196,210,.18);border-radius:10px;overflow:hidden;background:#10131b}
-.artwork-item img{display:block;width:100%;height:160px;object-fit:cover;background:#151923;color:#c5c8d0}.artwork-item img.image-failed{display:none}.artwork-item.image-missing:after{content:'Artwork preview unavailable — open source';display:flex;min-height:110px;align-items:center;justify-content:center;padding:12px;text-align:center;color:#aeb4c0;font-size:.78rem}
-.artwork-item a{display:block;padding:7px 9px;color:#d5bd8b;font-size:.76rem;text-decoration:none}
-.artwork-item a:hover{text-decoration:underline}
-.artwork-label{padding:6px 9px 0;color:#aeb4c0;font-size:.72rem;line-height:1.4}
-.prophet-image .fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:4rem;color:#b8bdc8;background:radial-gradient(circle,rgba(189,163,109,.13),transparent 65%)}
-.prophet-image.image-fallback .fallback{display:flex}
-.prophet-body{padding:1.15rem}
-.prophet-number{font-size:.72rem;letter-spacing:.16em;color:#c4aa72;text-transform:uppercase}
-.prophet-body h2{font-size:1.28rem;margin:.4rem 0 .7rem;color:#f0f1f4}
-.prophet-body p{color:#c5c8d0;line-height:1.65;margin:.55rem 0}
-.prophet-meta{border-top:1px solid rgba(190,196,210,.17);margin-top:.9rem;padding-top:.8rem;font-size:.88rem}
-.prophet-meta strong{color:#d8dbe2}
-.prophet-note{font-size:.88rem;color:#aeb4c0;border-left:2px solid #bda36d;padding:.65rem .85rem;background:rgba(255,255,255,.025);margin:1.5rem 0}
-.prophet-sources a{color:#d5bd8b}
-@media(max-width:520px){.prophet-image{height:205px}.prophet-body{padding:1rem}}
 
-</style>
 
-<style>
-.home-back{position:fixed;top:12px;right:12px;z-index:80;display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border:1px solid rgba(198,203,210,.38);border-radius:10px;background:rgba(8,9,13,.94);color:#dce2ea;text-decoration:none;font:600 .82rem/1.2 Arial,sans-serif;box-shadow:0 6px 20px #0007;backdrop-filter:blur(8px)}.home-back:hover{border-color:#c6cbd2;background:#171d27;color:#fff;text-decoration:none}
-.profile-viewer{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(7px)}.profile-viewer.open{display:flex}.profile-viewer-panel{position:relative;width:min(900px,100%);max-height:90vh;overflow:auto;padding:clamp(16px,3vw,28px);border:1px solid rgba(198,203,210,.35);border-radius:18px;background:#0d1119;color:#e8ebf0;box-shadow:0 24px 80px #000b}.profile-viewer-close{position:sticky;top:0;float:right;z-index:2;padding:8px 12px;border:1px solid #566171;border-radius:9px;background:#171e29;color:#fff;cursor:pointer;font:600 .85rem Arial,sans-serif}.profile-viewer-content{clear:both;padding-top:8px}.profile-viewer-content h2,.profile-viewer-content h3{color:#f2f4f7}.profile-viewer-content p{line-height:1.75}.profile-viewer-content img{max-width:100%}.profile-viewer-content .ruler-art{height:clamp(190px,34vw,330px);border-radius:12px;overflow:hidden}.profile-viewer-content .portrait{width:145px;height:190px;object-fit:cover}.profile-view-button{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:10px 14px;border:1px solid rgba(198,203,210,.42);border-radius:9px;background:#172131;color:#edf2f7;cursor:pointer;font:600 .82rem Arial,sans-serif;transition:transform .2s,border-color .2s}.profile-view-button:hover{transform:translateY(-2px);border-color:#c6cbd2;background:#202d40}
-@media(max-width:560px){.home-back{top:8px;right:8px;padding:8px 10px;font-size:.75rem}.profile-viewer{padding:8px}.profile-viewer-panel{max-height:94vh;border-radius:13px}}
-</style><script src="assets/site-nav.js?v=3" defer></script>
+<script src="assets/site-nav.js?v=3" defer></script>
 <link rel="stylesheet" href="assets/home-apokolips.css?v=1">
 <link rel="stylesheet" href="assets/page-apokolips.css?v=4">
-<link rel="stylesheet" href="assets/collections-apokolips.css?v=1">
+<link rel="stylesheet" href="assets/collections-apokolips.css?v=2">
 <link rel="stylesheet" href="assets/interaction-effects.css?v=1">
 </head>
-<body class="home-apokolips page-apokolips collection-page collection-prophets"><a class="home-back" href="HomeC.html" aria-label="Back to Constantine home">← Back to Home</a>
+<body class="home-apokolips page-apokolips collection-page collection-prophets">
 <canvas id="particles" aria-hidden="true"></canvas>
 
 <main>
