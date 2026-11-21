@@ -23,6 +23,12 @@
 @media(prefers-reduced-motion:no-preference){.profile-modal-dialog{animation:profileModalIn .22s ease-out}}
 @keyframes profileModalIn{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
 
+.figure-share-button{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;margin-top:16px;padding:9px 13px;border:1px solid rgba(117,173,255,.35);border-radius:999px;background:rgba(24,54,91,.55);color:#c9e4ff;font:600 .82rem inherit;cursor:pointer;transition:background .2s,border-color .2s}
+.figure-share-button:hover{background:rgba(35,83,135,.8);border-color:#79b9ed}
+.figure-share-button:focus-visible{outline:2px solid #79b9ed;outline-offset:3px}
+.profile-modal-dialog .figure-share-button{display:none}
+
+
 </style>
 </head>
 <body class="home-apokolips page-apokolips collection-page">
@@ -186,6 +192,48 @@ cards.forEach(card=>{
 close.addEventListener('click',dismiss);
 overlay.addEventListener('click',event=>{if(event.target===overlay)dismiss();});
 document.addEventListener('keydown',event=>{if(overlay.classList.contains('is-open')&&event.key==='Escape')dismiss();});
+})();
+</script>
+
+<script>
+(()=>{'use strict';
+const cards=[...document.querySelectorAll('#figureGrid .figure-card')];
+if(!cards.length)return;
+const slugify=value=>value.toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const byId=new Map();
+cards.forEach(card=>{
+ const heading=card.querySelector('h3');
+ if(!heading)return;
+ const slug=slugify(heading.textContent.trim());
+ card.dataset.shareId=slug;
+ byId.set(slug,card);
+ const button=document.createElement('button');
+ button.type='button';button.className='figure-share-button';
+ button.innerHTML='<span aria-hidden="true">↗</span> Share this profile';
+ button.setAttribute('aria-label','Share '+heading.textContent.trim()+' profile');
+ button.addEventListener('click',async event=>{
+  event.stopPropagation();
+  const url=new URL(window.location.href);url.hash='profile-'+slug;
+  const shareData={title:heading.textContent.trim()+' | Constantine',text:'Read this profile on Constantine:',url:url.href};
+  try{
+   if(navigator.share){await navigator.share(shareData);}
+   else if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(url.href);button.innerHTML='<span aria-hidden="true">✓</span> Link copied';}
+   else{window.prompt('Copy this unique profile link:',url.href);}
+  }catch(error){if(error&&error.name!=='AbortError'){window.prompt('Copy this unique profile link:',url.href);}}
+ });
+ card.appendChild(button);
+});
+function openFromHash(){
+ const slug=decodeURIComponent(location.hash.replace(/^#profile-/,''));
+ const card=byId.get(slug);
+ if(!card)return;
+ const search=document.getElementById('figureSearch'),filter=document.getElementById('figureFilter');
+ if(card.hidden){if(search)search.value='';if(filter)filter.value='all';if(search)search.dispatchEvent(new Event('input',{bubbles:true}));if(filter)filter.dispatchEvent(new Event('change',{bubbles:true}));}
+ card.scrollIntoView({behavior:'smooth',block:'center'});
+ card.click();
+}
+window.addEventListener('hashchange',openFromHash);
+if(location.hash.startsWith('#profile-'))setTimeout(openFromHash,80);
 })();
 </script>
 </body></html>
