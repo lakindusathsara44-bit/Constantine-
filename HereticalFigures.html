@@ -23,6 +23,14 @@
 @media(prefers-reduced-motion:no-preference){.profile-modal-dialog{animation:profileModalIn .22s ease-out}}
 @keyframes profileModalIn{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
 
+
+/* Unique per-profile sharing */
+.figure-share-button{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:16px;padding:9px 14px;border:1px solid rgba(117,173,255,.38);border-radius:999px;background:rgba(25,57,94,.72);color:#c8e5ff;font:600 .82rem inherit;cursor:pointer;transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.figure-share-button:hover{background:rgba(38,83,132,.9);border-color:#83c5ff;transform:translateY(-1px)}
+.figure-share-button:focus-visible{outline:2px solid #83c5ff;outline-offset:3px}
+.figure-share-button .share-feedback{font-size:.78rem;color:#b8f3cf}
+.profile-modal-dialog .figure-share-button{margin-top:18px}
+
 </style>
 </head>
 <body class="home-apokolips page-apokolips collection-page">
@@ -188,4 +196,72 @@ overlay.addEventListener('click',event=>{if(event.target===overlay)dismiss();});
 document.addEventListener('keydown',event=>{if(overlay.classList.contains('is-open')&&event.key==='Escape')dismiss();});
 })();
 </script>
+
+<script>
+(()=>{'use strict';
+const cards=[...document.querySelectorAll('#figureGrid .figure-card')];
+if(!cards.length)return;
+const slugify=value=>value.toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')||'profile';
+const used=new Set(),byId=new Map();
+cards.forEach((card,index)=>{
+ const heading=card.querySelector('h3');
+ if(!heading)return;
+ const base=slugify(heading.textContent.trim());
+ let slug=base,n=2;
+ while(used.has(slug)){slug=base+'-'+n;n++;}
+ used.add(slug);card.dataset.shareId=slug;byId.set(slug,card);
+ const button=document.createElement('button');
+ button.type='button';button.className='figure-share-button';
+ button.innerHTML='<span aria-hidden="true">↗</span> Share profile';
+ button.setAttribute('aria-label','Share '+heading.textContent.trim()+' profile');
+ card.appendChild(button);
+});
+async function shareProfile(card,button){
+ const id=card.dataset.shareId;
+ if(!id)return;
+ const heading=card.querySelector('h3');
+ const url=new URL(window.location.href);
+ url.hash='profile-'+encodeURIComponent(id);
+ const data={title:(heading?heading.textContent.trim():'Profile')+' | Constantine',text:'Read this profile on Constantine:',url:url.href};
+ try{
+  if(typeof navigator.share==='function'){await navigator.share(data);return;}
+  if(navigator.clipboard&&typeof navigator.clipboard.writeText==='function'){
+   await navigator.clipboard.writeText(url.href);
+   const old=button.innerHTML;button.innerHTML='<span class="share-feedback">✓ Link copied</span>';
+   window.setTimeout(()=>{button.innerHTML=old;},2200);
+   return;
+  }
+  window.prompt('Copy this unique profile link:',url.href);
+ }catch(error){
+  if(error&&error.name!=='AbortError')window.prompt('Copy this unique profile link:',url.href);
+ }
+}
+document.addEventListener('click',event=>{
+ const button=event.target.closest('.figure-share-button');
+ if(!button)return;
+ event.preventDefault();event.stopPropagation();
+ const card=button.closest('.figure-card');
+ if(card)shareProfile(card,button);
+});
+function openSharedProfile(){
+ if(!location.hash.startsWith('#profile-'))return;
+ let id;
+ try{id=decodeURIComponent(location.hash.slice('#profile-'.length));}catch{return;}
+ const card=byId.get(id);
+ if(!card)return;
+ const search=document.getElementById('figureSearch'),filter=document.getElementById('figureFilter');
+ if(card.hidden){
+  if(search)search.value='';
+  if(filter)filter.value='all';
+  if(search)search.dispatchEvent(new Event('input',{bubbles:true}));
+  else if(filter)filter.dispatchEvent(new Event('change',{bubbles:true}));
+ }
+ card.scrollIntoView({behavior:'smooth',block:'center'});
+ card.click();
+}
+window.addEventListener('hashchange',openSharedProfile);
+if(location.hash.startsWith('#profile-'))window.addEventListener('load',()=>window.setTimeout(openSharedProfile,100),{once:true});
+})();
+</script>
+
 </body></html>
