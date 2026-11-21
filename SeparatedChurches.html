@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090d">
+<meta name="description" content="A Catholic historical and theological study of Christian communities separated from full communion with the Catholic Church, their origins, founders and doctrinal differences.">
+<title>Separated Churches &amp; Doctrinal Divisions | Constantine</title>
+<link rel="stylesheet" href="assets/style.css?v=3">
+<script src="assets/site-nav.js?v=4" defer></script>
+<link rel="stylesheet" href="assets/home-apokolips.css?v=1">
+<link rel="stylesheet" href="assets/page-apokolips.css?v=4">
+<link rel="stylesheet" href="assets/collections-apokolips.css?v=3">
+<link rel="stylesheet" href="assets/interaction-effects.css?v=3">
+<style>
+.separated-page{max-width:1160px;margin:auto}.separated-intro{max-width:960px;color:#b7c5d8}.separated-callout{margin:26px 0;padding:20px 22px;border:1px solid rgba(117,173,255,.25);border-left:3px solid #79b9ed;border-radius:12px;background:linear-gradient(120deg,rgba(22,43,69,.56),rgba(8,13,22,.8))}.separated-callout p{margin:7px 0}.separated-tools{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}.separated-tools input{flex:1;min-width:min(100%,260px);padding:13px 15px}.separated-tools select{padding:12px;min-width:190px}.church-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:18px;margin:20px 0 36px}.church-card{display:flex;flex-direction:column;min-width:0;border:1px solid rgba(140,174,218,.18);border-radius:16px;padding:22px;background:linear-gradient(150deg,rgba(22,31,47,.96),rgba(7,10,16,.98));box-shadow:0 16px 44px rgba(0,0,0,.25);transition:transform .25s ease,border-color .25s ease}.church-card:hover{transform:translateY(-4px);border-color:rgba(117,173,255,.5)}.church-card h3{margin:8px 0;color:#eff5ff}.church-card p{margin:8px 0;color:#b5c2d4;line-height:1.75}.church-era{font:500 .68rem 'DM Mono',monospace;letter-spacing:.08em;color:#8fb9ee}.church-founder{font-size:.88rem;color:#d5e4f6}.church-card details{margin-top:14px;border-top:1px solid rgba(140,174,218,.16);padding-top:13px}.church-card summary{cursor:pointer;color:#9fd2ff;font-weight:700}.church-card details p{font-size:.9rem}.doctrine-tag{display:inline-flex;align-self:flex-start;padding:5px 9px;border:1px solid rgba(117,173,255,.23);border-radius:999px;color:#a9d5ff;font-size:.68rem}.separated-section-title{margin:42px 0 14px;padding-bottom:12px;border-bottom:1px solid rgba(140,174,218,.16)}.separated-note,.separated-sources{margin:28px 0;padding:22px;border:1px solid rgba(140,174,218,.16);border-radius:14px;background:rgba(11,16,25,.82)}.separated-note p,.separated-sources li{color:#b7c5d8;line-height:1.8}.separated-sources ul{padding-left:20px}.separated-sources li{margin:8px 0}.separated-empty{display:none;color:#aebbd0;padding:18px}.separated-page .button{margin-top:18px}
+</style>
+</head>
+<body class="home-apokolips page-apokolips collection-page collection-separated">
+<canvas id="particles" aria-hidden="true"></canvas>
+<main>
+<section class="hero"><div class="eyebrow">CONSTANTINE · FAITH · HISTORY · DOCTRINE</div><h1>SEPARATED CHURCHES</h1><p class="lead">A Catholic study of Christian divisions, their historical founders, origins and doctrinal differences</p></section>
+<div class="wrap separated-page">
+<section class="section">
+<div class="separated-intro">
+<p>Christianity has experienced serious divisions throughout its history. This collection examines churches and religious movements that are not in full communion with the Catholic Church. It explains when they emerged, the people associated with their beginnings, the historical circumstances, and the teachings that differ from Catholic doctrine.</p>
+<p>The word <strong>founder</strong> must be used carefully. Some communities grew out of long historical movements rather than being created by one person. Others were organised by identifiable leaders. A founder's role is not always the same as the origin of every belief later associated with a denomination.</p>
+</div>
+<div class="separated-callout">
+<strong>A necessary Catholic distinction</strong>
+<p>The Catholic Church distinguishes <em>heresy</em> (the obstinate post-baptismal denial or doubt of a truth that must be believed with divine and Catholic faith), <em>apostasy</em> (total repudiation of the Christian faith), and <em>schism</em> (refusal of submission to the Roman Pontiff or communion with those subject to him). These are technical theological terms, not insults to use against individual people.</p>
+<p>The Catechism also teaches that people born and raised in communities that resulted from earlier divisions are not personally guilty merely because of the separation. Catholics are to recognise baptised Christians as brothers and sisters in the Lord. Elements of truth, Scripture, faith, hope, charity and grace can be found outside the visible boundaries of the Catholic Church.</p>
+<p><strong>Therefore:</strong> this page evaluates teachings and historical separations from a Catholic perspective; it does not judge the conscience, sincerity or eternal destiny of individual believers.</p>
+</div>
+<div class="separated-tools">
+<input id="churchSearch" type="search" placeholder="Search a church, founder, doctrine or date…" aria-label="Search churches">
+<select id="churchFilter" aria-label="Filter by movement">
+<option value="all">All movements</option>
+<option value="reformation">Reformation traditions</option>
+<option value="later">Later Protestant movements</option>
+<option value="restoration">Restorationist movements</option>
+</select>
+</div>
+<p id="churchCount" class="church-era" aria-live="polite"></p>
+<div class="church-grid" id="churchGrid">
+<article class="church-card" data-group="reformation" data-search="lutheran protestant martin luther 95 theses 1517 germany sola scriptura faith justification sacraments">
+<span class="church-era">16TH CENTURY · GERMANY · REFORMATION</span><h3>Lutheran Churches</h3><span class="doctrine-tag">Reformation tradition</span>
+<p class="church-founder"><strong>Key reformer:</strong> Martin Luther (1483–1546)</p>
+<p>Martin Luther, an Augustinian friar and professor of theology, became the central figure in the German Reformation. In 1517 he circulated his Ninety-Five Theses, initially challenging the preaching and sale of indulgences and calling for theological debate. The dispute expanded into a break with Rome and the development of Lutheran church communities.</p>
+<details><summary>Read full historical and doctrinal profile</summary>
+<p><strong>Historical development:</strong> Luther's movement spread through German territories with the support of scholars, city councils and princes. The Augsburg Confession (1530), prepared principally by Philipp Melanchthon, became a foundational Lutheran confession. Luther did not single-handedly create every later Protestant church.</p>
+<p><strong>Key teachings:</strong> Lutheran theology emphasises justification by faith, the authority of Scripture, and the distinction between Law and Gospel. It generally recognises Baptism and the Lord's Supper as sacraments, while differing from Catholic teaching on the nature of justification, ecclesial authority, the Eucharistic sacrifice and several other doctrines.</p>
+<p><strong>Catholic assessment:</strong> The Reformation rejected or reinterpreted teachings and structures that Catholics understand as belonging to the apostolic faith. The Council of Trent responded to disputed doctrines while also addressing abuses requiring reform. The Catholic Church nevertheless recognises that many Lutheran Christians are baptised Christians and that genuine Christian gifts are present in their communities.</p>
+<p><strong>Important note:</strong> “Protestantism” is not one single church founded by Luther. It includes many traditions with different histories and doctrines.</p>
+<p><strong>Read:</strong> Romans 3–5; Galatians 2–3; James 2; John 6; Matthew 16:18–19.</p>
+</details></article>
+
+<article class="church-card" data-group="reformation" data-search="church of england anglican henry viii thomas cranmer elizabeth 1534 act supremacy pope england">
+<span class="church-era">16TH CENTURY · ENGLAND · ENGLISH REFORMATION</span><h3>Church of England (Anglican Communion)</h3><span class="doctrine-tag">Reformation tradition</span>
+<p class="church-founder"><strong>Historical catalyst:</strong> King Henry VIII; later reformers included Thomas Cranmer</p>
+<p>The Christian Church in England existed centuries before Henry VIII and was historically part of Western Catholic Christianity. The decisive institutional break with papal authority took place in the 1530s. The 1534 Act of Supremacy declared the English king supreme head of the Church in England after the conflict over Henry's marriage and the Pope's authority.</p>
+<details><summary>Read full historical and doctrinal profile</summary>
+<p><strong>Origins:</strong> The Church of England's own historical account traces British Christianity to the early centuries and describes its communion with Rome before the Reformation. Henry VIII initiated the break; he did not create Christianity in England. Thomas Cranmer, Archbishop of Canterbury, played a major role in shaping its later Protestant theology and liturgy under Edward VI.</p>
+<p><strong>Development:</strong> The religious settlement under Elizabeth I helped establish the distinctive Anglican identity. Anglicanism later developed into a worldwide communion with diverse theological expressions, from evangelical to Anglo-Catholic.</p>
+<p><strong>Key differences:</strong> The Church of England does not recognise the Pope's universal jurisdiction. Anglican beliefs about Eucharist, ordained ministry, authority and sacraments vary among provinces and traditions. Its historic formularies differ from Catholic doctrine on papal primacy and several other points.</p>
+<p><strong>Catholic assessment:</strong> Anglicanism is not accurately described as a church founded from nothing by Henry VIII. It is an ancient English Christian institution whose communion with Rome was broken in the Reformation. Catholic teaching recognises the complexity of Anglican history, while maintaining that full ecclesial communion and Catholic understanding of apostolic ministry are not present.</p>
+<p><strong>Read:</strong> Acts 15; Matthew 16:18–19; John 17:20–23.</p>
+</details></article>
+
+<article class="church-card" data-group="later" data-search="methodist john wesley charles wesley 18th century revival anglican holiness salvation army william catherine booth">
+<span class="church-era">18TH–19TH CENTURIES · BRITAIN</span><h3>Methodist Churches</h3><span class="doctrine-tag">Later Protestant movement</span>
+<p class="church-founder"><strong>Key founders:</strong> John Wesley (1703–1791) and Charles Wesley (1707–1788)</p>
+<p>Methodism began as a renewal movement within the Church of England in the 18th century. John Wesley and his brother Charles organised disciplined groups for prayer, Bible study, preaching and works of mercy. The movement later developed separate Methodist denominations, especially in North America and Britain.</p>
+<details><summary>Read full historical and doctrinal profile</summary>
+<p><strong>Key emphases:</strong> Personal conversion, grace, holiness, disciplined Christian living, evangelism and care for the poor. Methodist traditions are diverse and some remain in ecumenical relationships with other churches.</p>
+<p><strong>Catholic comparison:</strong> Methodists generally do not accept papal primacy or the Catholic understanding of the Church's sacramental and apostolic structure. Their theology of grace and sanctification has points of contact with Catholic teaching, but also significant differences.</p>
+<p><strong>Historical caution:</strong> Wesley did not begin by setting out to found an entirely new church; Methodism developed from a renewal movement into separate church bodies over time.</p>
+</details></article>
+
+<article class="church-card" data-group="later" data-search="salvation army william booth catherine booth 1865 1878 methodist holiness sacraments baptism eucharist">
+<span class="church-era">1865 · EAST LONDON · 1878 NAME ADOPTED</span><h3>The Salvation Army</h3><span class="doctrine-tag">Evangelical Protestant movement</span>
+<p class="church-founder"><strong>Co-founders:</strong> William Booth (1829–1912) and Catherine Booth (1829–1890)</p>
+<p>The Salvation Army began in 1865 as the East London Christian Mission, led by the Methodist preacher William Booth and his wife Catherine. It adopted the name “The Salvation Army” in 1878 and developed a distinctive military-style organisation for evangelism and practical service to people in poverty.</p>
+<details><summary>Read full historical and doctrinal profile</summary>
+<p><strong>Purpose and work:</strong> The Booths sought to preach the Gospel among people who were often neglected by established churches. The movement became known for shelters, food assistance, addiction recovery and social outreach. Its charitable work is a significant part of its public identity.</p>
+<p><strong>Doctrinal identity:</strong> The Salvation Army describes itself as an evangelical part of the universal Christian Church. It emerged from Methodist/Wesleyan theology and emphasises conversion, holiness, the Bible and practical Christian service.</p>
+<p><strong>Sacraments:</strong> A distinctive feature is that the Salvation Army does not practise water baptism or the Lord's Supper as rites in the usual way, believing that holiness and spiritual life should not be limited to sacramental observances. This differs substantially from Catholic sacramental theology, in which Baptism and the Eucharist are central sacraments instituted by Christ.</p>
+<p><strong>Catholic assessment:</strong> Its origins are Protestant and outside Catholic communion. Its service to the poor and proclamation of Christ should be distinguished from doctrinal questions; Catholics can acknowledge genuine works of charity while explaining the importance of the sacraments and apostolic communion.</p>
+</details></article>
+
+<article class="church-card" data-group="restoration" data-search="church jesus christ latter day saints mormon joseph smith 1830 book mormon trinity godhead restoration scripture">
+<span class="church-era">1830 · NEW YORK · RESTORATIONIST</span><h3>Church of Jesus Christ of Latter-day Saints (LDS)</h3><span class="doctrine-tag">Restorationist movement</span>
+<p class="church-founder"><strong>Founder:</strong> Joseph Smith Jr. (1805–1844)</p>
+<p>Organised on 6 April 1830 in New York, the movement teaches that the original Church established by Jesus Christ had lost its authority and needed to be restored through Joseph Smith. Members commonly prefer the name “Latter-day Saints”; “Mormon” is a familiar historical label, but the official church name is preferred.</p>
+<details><summary>Read full historical and doctrinal profile</summary>
+<p><strong>Foundational claims:</strong> Joseph Smith reported a First Vision in 1820 and later said that the angel Moroni directed him to records he translated as the Book of Mormon. The movement accepts the Bible and additional scriptures, including the Book of Mormon, Doctrine and Covenants, and Pearl of Great Price.</p>
+<p><strong>Major doctrinal differences:</strong> LDS teaching understands the Father, Son and Holy Ghost as three distinct beings united in purpose, rather than the one divine Being in three co-equal, consubstantial Persons confessed in the Nicene Creed. It also teaches continuing revelation through living prophets and a restoration of priesthood authority. These are fundamental differences from historic Catholic and Nicene Christianity.</p>
+<p><strong>Catholic assessment:</strong> The Congregation for the Doctrine of the Faith issued a formal negative decision in 2001 on the validity of baptism administered by the LDS Church, explaining that its understanding of God and the Trinity differs so substantially that the Catholic Church cannot recognise that baptism as valid. This is a specific sacramental judgment, not a judgment on the sincerity or dignity of individual LDS members.</p>
+<p><strong>Important distinction:</strong> LDS members identify themselves as Christians and centre their faith on Jesus Christ. Catholic theology, however, finds their conception of God and other foundational teachings incompatible with the classical Trinitarian faith.</p>
+</details></article>
+
+<article class="church-card" data-group="later" data-search="seventh day adventist william miller ellen g white 1863 sabbath second coming">
+<span class="church-era">19TH CENTURY · UNITED STATES</span><h3>Seventh-day Adventist Church</h3><span class="doctrine-tag">Later Protestant movement</span>
+<p class="church-founder"><strong>Key figures:</strong> Ellen G. White, James White, Joseph Bates; roots in the Millerite movement</p>
+<p>The Seventh-day Adventist Church was formally organised in 1863 after the Millerite movement and the disappointment surrounding expectations of Christ's return in 1844. It is not the work of one sole founder; several leaders shaped its early identity.</p>
+<details><summary>Read full historical and doctrinal profile</summary>
+<p><strong>Distinctive emphases:</strong> Saturday Sabbath observance, the imminent Second Coming, health and lifestyle teaching, and a distinctive interpretation of the heavenly sanctuary. Ellen G. White became an influential author and spiritual leader.</p>
+<p><strong>Catholic comparison:</strong> Adventists share many central Christian beliefs, including the Trinity and the divinity of Christ, but differ from Catholic teaching on the authority of tradition, the Sabbath and Sunday, the Church, and certain eschatological interpretations.</p>
+</details></article>
+</div>
+<p class="separated-empty" id="churchEmpty">No matching community found. Try another search term.</p>
+
+<h2 class="separated-section-title">What does the Catholic Church teach about Christian division?</h2>
+<div class="separated-note">
+<p><strong>1. The Church is one.</strong> Catholic doctrine teaches that Christ founded one Church and prayed that his disciples would be united (John 17:20–23). The divisions of Christians wound that visible unity.</p>
+<p><strong>2. Division has a history.</strong> The causes of separation are not identical. The East–West schism, the 16th-century Reformation, later revival movements and 19th-century restorationist movements arose in different circumstances. They should not all be described as if they began in the same way.</p>
+<p><strong>3. Recognise what is true and holy.</strong> The Second Vatican Council teaches that separated Christian communities retain elements of Christian truth and sanctification. Catholics should approach other Christians with respect, honesty and a desire for unity.</p>
+<p><strong>4. Work for unity in truth.</strong> Catholic ecumenism is not pretending that doctrinal differences do not matter. It involves prayer, conversion of heart, accurate understanding, dialogue and a search for the unity Christ desires.</p>
+</div>
+<h2 class="separated-section-title">Heresy, schism and separation — not the same thing</h2>
+<div class="separated-note">
+<p><strong>Heresy:</strong> In Catholic canon law, the obstinate denial or doubt, after Baptism, of a truth that must be believed with divine and Catholic faith.</p>
+<p><strong>Schism:</strong> The refusal of submission to the Roman Pontiff or of communion with the members of the Church subject to him.</p>
+<p><strong>Apostasy:</strong> The total repudiation of the Christian faith.</p>
+<p>A community may be separated from full communion without every member being personally a heretic or schismatic. These terms describe specific theological and canonical realities. Use them carefully and explain the actual doctrine in dispute.</p>
+</div>
+<div class="separated-sources">
+<h2>Primary sources &amp; further study</h2>
+<ul>
+<li><a href="https://www.vatican.va/archive/ENG0015/_INDEX.HTM" target="_blank" rel="noopener noreferrer">Catechism of the Catholic Church — especially §§ 817–822, 2089</a></li>
+<li><a href="https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann208-329_en.html" target="_blank" rel="noopener noreferrer">Code of Canon Law — Canon 751: heresy, apostasy and schism</a></li>
+<li><a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html" target="_blank" rel="noopener noreferrer">Second Vatican Council — Unitatis redintegratio (Decree on Ecumenism)</a></li>
+<li><a href="https://www.loc.gov/resource/gdcwdl.wdl_07497/" target="_blank" rel="noopener noreferrer">Library of Congress — Martin Luther's Ninety-Five Theses (1517)</a></li>
+<li><a href="https://www.churchofengland.org/about/our-history" target="_blank" rel="noopener noreferrer">Church of England — Our History</a></li>
+<li><a href="https://www.parliament.uk/about/living-heritage/transformingsociety/private-lives/religion/collections/common-prayer/act-of-supremacy/" target="_blank" rel="noopener noreferrer">UK Parliament — Act of Supremacy (1534)</a></li>
+<li><a href="https://www.salvationarmy.org/history" target="_blank" rel="noopener noreferrer">The Salvation Army — Official History</a></li>
+<li><a href="https://www.churchofjesuschrist.org/welcome/our-history?lang=eng" target="_blank" rel="noopener noreferrer">Church of Jesus Christ of Latter-day Saints — Our History (primary account of its own beliefs)</a></li>
+<li><a href="https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20010605_battesimo_mormoni-ladaria_en.html" target="_blank" rel="noopener noreferrer">Congregation for the Doctrine of the Faith — The Validity of Baptism conferred in the LDS Church (2001)</a></li>
+</ul>
+<p><strong>Editorial method:</strong> Historical dates and founders are checked against institutional, archival and academic sources. Each community's own account is identified as its own perspective; Catholic doctrinal judgments are grounded in Catholic primary documents. This page is an educational overview, not a substitute for the full texts.</p>
+</div>
+<a class="button" href="HomeC.html">Return Home</a>
+</section></div></main>
+<footer class="footer">CONSTANTINE · FAITH · HISTORY · TRADITION<br><span>Educational resource. This page presents Catholic doctrine and historical information with respect for all people.</span><br><a class="about-us-link" href="https://www.apokolips.xyz/info.html">About us ↗</a></footer>
+<script src="assets/script.js"></script>
+<script src="assets/interaction-effects.js?v=3" defer></script>
+<script>
+(()=>{'use strict';
+const search=document.getElementById('churchSearch'),filter=document.getElementById('churchFilter'),cards=[...document.querySelectorAll('.church-card')],count=document.getElementById('churchCount'),empty=document.getElementById('churchEmpty');
+function apply(){const q=search.value.trim().toLowerCase(),group=filter.value;let shown=0;cards.forEach(card=>{const matchText=(card.dataset.search+' '+card.innerText).toLowerCase().includes(q),matchGroup=group==='all'||card.dataset.group===group,visible=matchText&&matchGroup;card.hidden=!visible;if(visible)shown++;});count.textContent=shown+' of '+cards.length+' communities shown';empty.style.display=shown?'none':'block';}
+search.addEventListener('input',apply);filter.addEventListener('change',apply);apply();
+})();
+</script>
+</body></html>
