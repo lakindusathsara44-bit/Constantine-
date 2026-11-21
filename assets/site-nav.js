@@ -10,7 +10,6 @@
     ['Saints', 'catholicsaints.html'],
     ['Kings', 'Kings.html'],
     ['Prophets', 'vog.html'],
-    ['Separated Churches', 'SeparatedChurches.html'],
     ['People', 'resp.html'],
     ['Bible Quotes', 'Quotes.html'],
     ['Prayer Wall', 'PrayerWall.html'],
