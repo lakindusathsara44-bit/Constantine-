@@ -14,6 +14,18 @@
 <link rel="stylesheet" href="assets/interaction-effects.css?v=3">
 <style>
 .separated-page{max-width:1160px;margin:auto}.founder-doctrine{margin-top:16px;padding:16px;border:1px solid rgba(235,173,105,.25);border-left:3px solid #d6a76b;border-radius:10px;background:linear-gradient(120deg,rgba(58,39,21,.24),rgba(8,13,22,.45))}.founder-doctrine h4{margin:0 0 10px;color:#f0d1a5;font-size:1rem}.founder-doctrine p{font-size:.88rem;line-height:1.78}.founder-doctrine strong{color:#e9d3b5}.separated-intro{max-width:960px;color:#b7c5d8}.separated-callout{margin:26px 0;padding:20px 22px;border:1px solid rgba(117,173,255,.25);border-left:3px solid #79b9ed;border-radius:12px;background:linear-gradient(120deg,rgba(22,43,69,.56),rgba(8,13,22,.8))}.separated-callout p{margin:7px 0}.separated-tools{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}.separated-tools input{flex:1;min-width:min(100%,260px);padding:13px 15px}.separated-tools select{padding:12px;min-width:190px}.church-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:18px;margin:20px 0 36px}.church-card{display:flex;flex-direction:column;min-width:0;border:1px solid rgba(140,174,218,.18);border-radius:16px;padding:22px;background:linear-gradient(150deg,rgba(22,31,47,.96),rgba(7,10,16,.98));box-shadow:0 16px 44px rgba(0,0,0,.25);transition:transform .25s ease,border-color .25s ease}.church-card:hover{transform:translateY(-4px);border-color:rgba(117,173,255,.5)}.church-card h3{margin:8px 0;color:#eff5ff}.church-card p{margin:8px 0;color:#b5c2d4;line-height:1.75}.church-era{font:500 .68rem 'DM Mono',monospace;letter-spacing:.08em;color:#8fb9ee}.church-founder{font-size:.88rem;color:#d5e4f6}.church-card details{margin-top:14px;border-top:1px solid rgba(140,174,218,.16);padding-top:13px}.church-card summary{cursor:pointer;color:#9fd2ff;font-weight:700}.church-card details p{font-size:.9rem}.doctrine-tag{display:inline-flex;align-self:flex-start;padding:5px 9px;border:1px solid rgba(117,173,255,.23);border-radius:999px;color:#a9d5ff;font-size:.68rem}.separated-section-title{margin:42px 0 14px;padding-bottom:12px;border-bottom:1px solid rgba(140,174,218,.16)}.separated-note,.separated-sources{margin:28px 0;padding:22px;border:1px solid rgba(140,174,218,.16);border-radius:14px;background:rgba(11,16,25,.82)}.separated-note p,.separated-sources li{color:#b7c5d8;line-height:1.8}.separated-sources ul{padding-left:20px}.separated-sources li{margin:8px 0}.separated-empty{display:none;color:#aebbd0;padding:18px}.separated-page .button{margin-top:18px}
+
+/* Opening prayer */
+.prayer-overlay{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:20px;background:rgba(2,5,12,.82);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);animation:prayerFade .35s ease}
+.prayer-dialog{width:min(100%,440px);padding:30px 26px;text-align:center;border:1px solid rgba(132,183,244,.34);border-radius:20px;background:linear-gradient(145deg,#111c2d,#080c14 78%);box-shadow:0 24px 90px rgba(0,0,0,.65),0 0 35px rgba(67,137,220,.12);animation:prayerRise .45s ease}
+.prayer-symbol{font-size:1.8rem;color:#a8ceff;margin-bottom:12px}
+.prayer-dialog h2{margin:0 0 15px;color:#d9eaff;font-size:1.15rem;letter-spacing:.04em}
+.prayer-dialog p{margin:0 auto 23px;max-width:360px;color:#e4eaf4;font-size:1rem;line-height:1.95}
+.prayer-dialog button{min-width:130px;padding:11px 28px;border:1px solid rgba(157,202,255,.55);border-radius:999px;background:linear-gradient(120deg,#244d7d,#17345a);color:#fff;font:700 .95rem inherit;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.prayer-dialog button:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(65,137,220,.3)}
+@keyframes prayerFade{from{opacity:0}to{opacity:1}}@keyframes prayerRise{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.prayer-overlay,.prayer-dialog{animation:none}}
+
 </style>
 </head>
 <body class="home-apokolips page-apokolips collection-page collection-separated">
@@ -167,4 +179,17 @@ function apply(){const q=search.value.trim().toLowerCase(),group=filter.value;le
 search.addEventListener('input',apply);filter.addEventListener('change',apply);apply();
 })();
 </script>
+
+<div class="prayer-overlay" id="openingPrayer" role="presentation">
+ <section class="prayer-dialog" role="dialog" aria-modal="true" aria-labelledby="prayerTitle" aria-describedby="prayerText">
+  <div class="prayer-symbol" aria-hidden="true">✝</div>
+  <h2 id="prayerTitle">A Prayer for Christian Unity</h2>
+  <p id="prayerText" lang="si">මේ මිත්‍යාදෘෂ්ටික දර්ශනය විශ්වාස කරන අපගේම නොමඟ ගිය සහෝදරයන්ට නැවත සත්‍ය දර්ශනය පෙන්වා දෙන මැනව. ආමෙන්.</p>
+  <button type="button" id="prayerAmen">Amen</button>
+ </section>
+</div>
+<script>
+(()=>{const overlay=document.getElementById('openingPrayer'),button=document.getElementById('prayerAmen');if(!overlay||!button)return;const close=()=>{overlay.remove();document.body.style.overflow='';};document.body.style.overflow='hidden';button.addEventListener('click',close);button.focus();})();
+</script>
+
 </body></html>
