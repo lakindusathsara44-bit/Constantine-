@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="assets/home-apokolips.css?v=1">
 <link rel="stylesheet" href="assets/page-apokolips.css?v=4">
 <link rel="stylesheet" href="assets/collections-apokolips.css?v=2">
-<link rel="stylesheet" href="assets/interaction-effects.css?v=1">
+<link rel="stylesheet" href="assets/interaction-effects.css?v=2">
 </head>
 <body class="home-apokolips page-apokolips collection-page collection-prophets">
 <canvas id="particles" aria-hidden="true"></canvas>
@@ -71,5 +71,5 @@ grid.innerHTML=prophets.map((p,i)=>'<article class="prophet-card'+(i<4?' prophet
 
   document.querySelectorAll('.prophet-card').forEach(card=>{if(card.querySelector('.profile-view-button'))return;const btn=document.createElement('button');btn.type='button';btn.className='profile-view-button';btn.textContent='View full profile →';btn.addEventListener('click',()=>openProfile(card.outerHTML));card.querySelector('.prophet-body')?.appendChild(btn)});
 })();
-</script><div id="google_translate_element" aria-hidden="true"></div><script src="assets/language.js"></script><script src="assets/interaction-effects.js?v=1" defer></script>
+</script><div id="google_translate_element" aria-hidden="true"></div><script src="assets/language.js"></script><script src="assets/interaction-effects.js?v=2" defer></script>
 </body></html>
