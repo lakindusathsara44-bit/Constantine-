@@ -22,6 +22,21 @@
 @keyframes prayerIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.prayer-dialog{animation:none}}
 
+
+/* Click-to-read profile modal */
+.profile-modal-overlay{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:clamp(10px,3vw,28px);background:rgba(2,5,12,.86);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+.profile-modal-overlay.is-open{display:flex}
+.profile-modal-dialog{position:relative;width:min(100%,900px);max-height:min(88dvh,900px);overflow:auto;padding:clamp(18px,3vw,32px);border:1px solid rgba(117,173,255,.35);border-radius:20px;background:linear-gradient(145deg,#101d32,#070b14 78%);box-shadow:0 24px 90px rgba(0,0,0,.72);color:#edf5ff;overscroll-behavior:contain}
+.profile-modal-close{position:sticky;top:0;float:right;z-index:2;width:40px;height:40px;border:1px solid rgba(150,190,240,.35);border-radius:50%;background:#17365b;color:#fff;font-size:1.35rem;cursor:pointer}
+.profile-modal-dialog .church-card{margin:0;max-width:none;cursor:default;transform:none!important}
+.profile-modal-dialog .church-card details{display:block}
+.profile-modal-dialog .church-card details>summary{display:none}
+.profile-modal-dialog .church-card details:not([open])>*{display:block}
+.church-card{cursor:pointer}
+.church-card:focus-visible{outline:2px solid #79b9ed;outline-offset:4px}
+@media(prefers-reduced-motion:no-preference){.profile-modal-dialog{animation:profileModalIn .22s ease-out}}
+@keyframes profileModalIn{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
+
 </style>
 </head>
 <body class="home-apokolips page-apokolips collection-page collection-separated">
@@ -30,7 +45,9 @@
  <section class="prayer-dialog" role="dialog" aria-modal="true" aria-labelledby="prayerTitle" aria-describedby="prayerText">
   <div class="prayer-cross" aria-hidden="true">✝</div>
   <h2 id="prayerTitle">A Prayer for Christian Unity</h2>
-  <p id="prayerText">Lord Jesus Christ, guide all Christians towards the truth and the unity You desire. Help us to seek You with humble hearts, to remain faithful to Your Gospel, and to treat one another with love and respect. Amen.</p>
+  <p id="prayerText">May You guide our own brothers and sisters who have gone astray by believing in this heretical teaching back to the truth.
+ 
+Amen.</p>
   <button type="button" id="prayerAmen">Amen</button>
  </section>
 </div>
@@ -221,4 +238,32 @@ else initOpeningPrayer();
 })();
 </script>
 
+
+<script>
+(()=>{'use strict';
+const cards=[...document.querySelectorAll('.church-card')];
+if(!cards.length)return;
+const overlay=document.createElement('div');
+overlay.className='profile-modal-overlay';
+overlay.innerHTML='<section class="profile-modal-dialog" role="dialog" aria-modal="true" aria-label="Profile details" tabindex="-1"><button class="profile-modal-close" type="button" aria-label="Close details">×</button><div class="profile-modal-body"></div></section>';
+document.body.appendChild(overlay);
+const dialog=overlay.querySelector('.profile-modal-dialog'),body=overlay.querySelector('.profile-modal-body'),close=overlay.querySelector('.profile-modal-close');
+let previousFocus=null,previousOverflow='';
+function open(card){
+ previousFocus=card;previousOverflow=document.body.style.overflow;
+ const clone=card.cloneNode(true);clone.classList.add('church-card');
+ clone.querySelectorAll('details').forEach(item=>item.open=true);
+ body.replaceChildren(clone);overlay.classList.add('is-open');document.body.style.overflow='hidden';close.focus();
+}
+function dismiss(){overlay.classList.remove('is-open');body.replaceChildren();document.body.style.overflow=previousOverflow;if(previousFocus)previousFocus.focus();}
+cards.forEach(card=>{
+ card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-haspopup','dialog');
+ card.addEventListener('click',event=>{if(event.target.closest('a,button,input,select,textarea'))return;open(card);});
+ card.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target===card){event.preventDefault();open(card);}});
+});
+close.addEventListener('click',dismiss);
+overlay.addEventListener('click',event=>{if(event.target===overlay)dismiss();});
+document.addEventListener('keydown',event=>{if(overlay.classList.contains('is-open')&&event.key==='Escape')dismiss();});
+})();
+</script>
 </body></html>

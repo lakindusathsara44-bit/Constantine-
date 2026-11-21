@@ -8,6 +8,21 @@
 <script src="assets/site-nav.js?v=4" defer></script>
 <style>
 .heresy-page{max-width:1160px;margin:auto}.heresy-intro{max-width:960px;color:#b7c5d8}.heresy-callout,.heresy-note,.heresy-sources{margin:24px 0;padding:20px 22px;border:1px solid rgba(117,173,255,.22);border-left:3px solid #79b9ed;border-radius:12px;background:linear-gradient(120deg,rgba(22,43,69,.48),rgba(8,13,22,.8))}.heresy-callout p,.heresy-note p,.heresy-sources li{color:#bdc9da;line-height:1.8}.heresy-tools{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.heresy-tools input,.heresy-tools select{padding:13px 15px}.heresy-tools input{flex:1;min-width:min(100%,260px)}.heresy-tools select{min-width:190px}.figure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:18px;margin:20px 0 36px}.figure-card{display:flex;flex-direction:column;min-width:0;border:1px solid rgba(140,174,218,.18);border-radius:16px;padding:22px;background:linear-gradient(150deg,rgba(22,31,47,.96),rgba(7,10,16,.98));box-shadow:0 16px 44px rgba(0,0,0,.25)}.figure-card h3{margin:8px 0;color:#eff5ff}.figure-card p{margin:8px 0;color:#b5c2d4;line-height:1.75}.figure-era{font:500 .68rem 'DM Mono',monospace;letter-spacing:.08em;color:#8fb9ee}.figure-tag{display:inline-flex;align-self:flex-start;padding:5px 9px;border:1px solid rgba(117,173,255,.23);border-radius:999px;color:#a9d5ff;font-size:.68rem}.figure-card details{margin-top:14px;border-top:1px solid rgba(140,174,218,.16);padding-top:13px}.figure-card summary{cursor:pointer;color:#9fd2ff;font-weight:700}.figure-card details p{font-size:.9rem}.figure-card[hidden]{display:none}.heresy-empty{display:none;color:#aebbd0;padding:18px}.heresy-sources ul{padding-left:20px}.heresy-sources li{margin:8px 0}.heresy-page .button{margin-top:18px}
+
+/* Click-to-read profile modal */
+.profile-modal-overlay{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:clamp(10px,3vw,28px);background:rgba(2,5,12,.86);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+.profile-modal-overlay.is-open{display:flex}
+.profile-modal-dialog{position:relative;width:min(100%,900px);max-height:min(88dvh,900px);overflow:auto;padding:clamp(18px,3vw,32px);border:1px solid rgba(117,173,255,.35);border-radius:20px;background:linear-gradient(145deg,#101d32,#070b14 78%);box-shadow:0 24px 90px rgba(0,0,0,.72);color:#edf5ff;overscroll-behavior:contain}
+.profile-modal-close{position:sticky;top:0;float:right;z-index:2;width:40px;height:40px;border:1px solid rgba(150,190,240,.35);border-radius:50%;background:#17365b;color:#fff;font-size:1.35rem;cursor:pointer}
+.profile-modal-dialog .figure-card{margin:0;max-width:none;cursor:default;transform:none!important}
+.profile-modal-dialog .figure-card details{display:block}
+.profile-modal-dialog .figure-card details>summary{display:none}
+.profile-modal-dialog .figure-card details:not([open])>*{display:block}
+.figure-card{cursor:pointer}
+.figure-card:focus-visible{outline:2px solid #79b9ed;outline-offset:4px}
+@media(prefers-reduced-motion:no-preference){.profile-modal-dialog{animation:profileModalIn .22s ease-out}}
+@keyframes profileModalIn{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
+
 </style>
 </head>
 <body class="home-apokolips page-apokolips collection-page">
@@ -130,4 +145,32 @@
 <script src="assets/script.js"></script><script src="assets/interaction-effects.js?v=3" defer></script>
 <script>
 (()=>{'use strict';const search=document.getElementById('figureSearch'),filter=document.getElementById('figureFilter'),cards=[...document.querySelectorAll('.figure-card')],count=document.getElementById('figureCount'),empty=document.getElementById('figureEmpty');function apply(){const q=search.value.trim().toLowerCase(),period=filter.value;let shown=0;cards.forEach(card=>{const visible=(card.dataset.search+' '+card.innerText).toLowerCase().includes(q)&&(period==='all'||card.dataset.period===period);card.hidden=!visible;if(visible)shown++;});count.textContent=shown+' of '+cards.length+' figures shown';empty.style.display=shown?'none':'block';}search.addEventListener('input',apply);filter.addEventListener('change',apply);apply();})();
-</script></body></html>
+</script>
+<script>
+(()=>{'use strict';
+const cards=[...document.querySelectorAll('.figure-card')];
+if(!cards.length)return;
+const overlay=document.createElement('div');
+overlay.className='profile-modal-overlay';
+overlay.innerHTML='<section class="profile-modal-dialog" role="dialog" aria-modal="true" aria-label="Profile details" tabindex="-1"><button class="profile-modal-close" type="button" aria-label="Close details">×</button><div class="profile-modal-body"></div></section>';
+document.body.appendChild(overlay);
+const dialog=overlay.querySelector('.profile-modal-dialog'),body=overlay.querySelector('.profile-modal-body'),close=overlay.querySelector('.profile-modal-close');
+let previousFocus=null,previousOverflow='';
+function open(card){
+ previousFocus=card;previousOverflow=document.body.style.overflow;
+ const clone=card.cloneNode(true);clone.classList.add('figure-card');
+ clone.querySelectorAll('details').forEach(item=>item.open=true);
+ body.replaceChildren(clone);overlay.classList.add('is-open');document.body.style.overflow='hidden';close.focus();
+}
+function dismiss(){overlay.classList.remove('is-open');body.replaceChildren();document.body.style.overflow=previousOverflow;if(previousFocus)previousFocus.focus();}
+cards.forEach(card=>{
+ card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-haspopup','dialog');
+ card.addEventListener('click',event=>{if(event.target.closest('a,button,input,select,textarea'))return;open(card);});
+ card.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target===card){event.preventDefault();open(card);}});
+});
+close.addEventListener('click',dismiss);
+overlay.addEventListener('click',event=>{if(event.target===overlay)dismiss();});
+document.addEventListener('keydown',event=>{if(overlay.classList.contains('is-open')&&event.key==='Escape')dismiss();});
+})();
+</script>
+</body></html>
