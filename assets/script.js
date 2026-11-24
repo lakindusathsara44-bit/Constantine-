@@ -10,3 +10,26 @@
  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 })();
+
+// APOLONIA AI — shared Constantine site-wide assistant integration.
+(() => {
+  'use strict';
+  if (window.__CONSTANTINE_APOLONIA_BOOTSTRAPPED__) return;
+  window.__CONSTANTINE_APOLONIA_BOOTSTRAPPED__ = true;
+  window.APOKOLIPS_APOLONIA_API = 'https://apolonia-ai-api.netlify.app';
+
+  const loadStyle = document.createElement('link');
+  loadStyle.rel = 'stylesheet';
+  loadStyle.href = 'assets/apolonia/apolonia.css?v=20261124a';
+  document.head.appendChild(loadStyle);
+
+  const loadAppControl = document.createElement('script');
+  loadAppControl.src = 'assets/apolonia/app-control.js?v=20261124a';
+  loadAppControl.defer = true;
+  document.head.appendChild(loadAppControl);
+
+  const loadAssistant = document.createElement('script');
+  loadAssistant.src = 'assets/apolonia/apolonia.js?v=20261124a';
+  loadAssistant.defer = true;
+  document.head.appendChild(loadAssistant);
+})();
