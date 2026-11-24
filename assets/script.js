@@ -25,11 +25,11 @@
 
   const loadAppControl = document.createElement('script');
   loadAppControl.src = 'assets/apolonia/app-control.js?v=20261124a';
-  loadAppControl.defer = true;
+  loadAppControl.async = false;
   document.head.appendChild(loadAppControl);
 
   const loadAssistant = document.createElement('script');
   loadAssistant.src = 'assets/apolonia/apolonia.js?v=20261124a';
-  loadAssistant.defer = true;
+  loadAssistant.async = false;
   document.head.appendChild(loadAssistant);
 })();
